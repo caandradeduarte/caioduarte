@@ -1,8 +1,4 @@
 Caioduarte::Application.routes.draw do
-  resources :job_descriptions
-
-  resources :thumbs
-
   resources :jobs
 
   resources :users

@@ -4,3 +4,163 @@ Connecting to database specified by database.yml
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (1.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (39.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateLanguages (20130407082106)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "languages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "locale" varchar(255), "flag" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130407082106')
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateBios (20130407082135)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "bios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "language_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("bios")
+  [1m[36m (0.2ms)[0m  [1mCREATE INDEX "index_bios_on_language_id" ON "bios" ("language_id")[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130407082135')
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreateUsers (20130407082153)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user" varchar(255), "password" varchar(255), "isAdmin" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130407082153')
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateJobs (20130407082219)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "isShown" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130407082219')
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+Migrating to CreateThumbs (20130407082321)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "thumbs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "picture" varchar(255), "job_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("thumbs")
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "index_thumbs_on_job_id" ON "thumbs" ("job_id")[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130407082321')
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreateJobDescriptions (20130407082352)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "job_descriptions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "language_id" integer, "job_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("job_descriptions")
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "index_job_descriptions_on_language_id" ON "job_descriptions" ("language_id")[0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("job_descriptions")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_job_descriptions_on_language_id')[0m
+  [1m[35m (0.1ms)[0m  CREATE INDEX "index_job_descriptions_on_job_id" ON "job_descriptions" ("job_id")
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130407082352')[0m
+  [1m[35m (1.8ms)[0m  commit transaction
+Migrating to AddEmailToUser (20130407090913)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "email" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130407090913')[0m
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("bios")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_bios_on_language_id')
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("job_descriptions")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_job_descriptions_on_job_id')
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_info('index_job_descriptions_on_language_id')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("jobs")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("languages")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("thumbs")
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_info('index_thumbs_on_job_id')[0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("users")
+
+
+Started GET "/users" for 127.0.0.1 at 2013-04-07 20:00:48 +1000
+Connecting to database specified by database.yml
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (19.8ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered users/index.html.erb within layouts/application (32.8ms)
+Compiled bios.css  (274ms)  (pid 7485)
+Compiled job_descriptions.css  (3ms)  (pid 7485)
+Compiled jobs.css  (2ms)  (pid 7485)
+Compiled languages.css  (3ms)  (pid 7485)
+Compiled scaffolds.css  (28ms)  (pid 7485)
+Compiled thumbs.css  (3ms)  (pid 7485)
+Compiled users.css  (2ms)  (pid 7485)
+Compiled application.css  (739ms)  (pid 7485)
+Compiled jquery.js  (4ms)  (pid 7485)
+Compiled jquery_ujs.js  (0ms)  (pid 7485)
+Compiled bios.js  (252ms)  (pid 7485)
+Compiled job_descriptions.js  (81ms)  (pid 7485)
+Compiled jobs.js  (85ms)  (pid 7485)
+Compiled languages.js  (115ms)  (pid 7485)
+Compiled thumbs.js  (83ms)  (pid 7485)
+Compiled users.js  (113ms)  (pid 7485)
+Compiled application.js  (959ms)  (pid 7485)
+Completed 200 OK in 2191ms (Views: 2079.1ms | ActiveRecord: 26.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-07 20:00:51 +1000
+Served asset /application.css - 304 Not Modified (56ms)
+
+
+Started GET "/assets/job_descriptions.css?body=1" for 127.0.0.1 at 2013-04-07 20:00:51 +1000
+Served asset /job_descriptions.css - 200 OK (2ms)
+
+
+Started GET "/assets/jobs.css?body=1" for 127.0.0.1 at 2013-04-07 20:00:51 +1000
+Served asset /jobs.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bios.css?body=1" for 127.0.0.1 at 2013-04-07 20:00:51 +1000
+Served asset /bios.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-04-07 20:00:51 +1000
+Served asset /scaffolds.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/languages.css?body=1" for 127.0.0.1 at 2013-04-07 20:00:51 +1000
+Served asset /languages.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/thumbs.css?body=1" for 127.0.0.1 at 2013-04-07 20:00:51 +1000
+Served asset /thumbs.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-04-07 20:00:51 +1000
+Served asset /users.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/job_descriptions.js?body=1" for 127.0.0.1 at 2013-04-07 20:00:51 +1000
+Served asset /job_descriptions.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-07 20:00:51 +1000
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-07 20:00:51 +1000
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bios.js?body=1" for 127.0.0.1 at 2013-04-07 20:00:51 +1000
+Served asset /bios.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jobs.js?body=1" for 127.0.0.1 at 2013-04-07 20:00:51 +1000
+Served asset /jobs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/languages.js?body=1" for 127.0.0.1 at 2013-04-07 20:00:51 +1000
+Served asset /languages.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/thumbs.js?body=1" for 127.0.0.1 at 2013-04-07 20:00:51 +1000
+Served asset /thumbs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-04-07 20:00:51 +1000
+Served asset /users.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-07 20:00:51 +1000
+Served asset /application.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2013-04-07 20:00:59 +1000
+Served asset /rails.png - 200 OK (9ms)
