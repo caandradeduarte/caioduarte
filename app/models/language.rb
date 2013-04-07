@@ -3,4 +3,6 @@ class Language < ActiveRecord::Base
 	has_many :jobs
 
   attr_accessible :flag, :locale, :name
+
+  mount_uploader :flag, FlagUploader
 end
