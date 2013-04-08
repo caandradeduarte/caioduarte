@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130407090913) do
+ActiveRecord::Schema.define(:version => 20130408083912) do
 
   create_table "bios", :force => true do |t|
     t.text     "content"
@@ -58,11 +58,10 @@ ActiveRecord::Schema.define(:version => 20130407090913) do
   add_index "thumbs", ["job_id"], :name => "index_thumbs_on_job_id"
 
   create_table "users", :force => true do |t|
-    t.string   "user"
-    t.string   "password"
+    t.string   "password_digest"
     t.boolean  "isAdmin"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.string   "email"
   end
 
