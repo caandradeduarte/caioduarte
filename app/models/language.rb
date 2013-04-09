@@ -4,5 +4,8 @@ class Language < ActiveRecord::Base
 
   attr_accessible :flag, :locale, :name
 
+  validates_presence_of :flag, :locale, :name
+  validates_uniqueness_of :locale, :name
+
   mount_uploader :flag, FlagUploader
 end
