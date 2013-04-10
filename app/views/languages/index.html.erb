@@ -1,27 +1,19 @@
-<h1>Listing languages</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Locale</th>
-    <th>Flag</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @languages.each do |language| %>
-  <tr>
-    <td><%= language.name %></td>
-    <td><%= language.locale %></td>
-    <td><%= language.flag %></td>
-    <td><%= link_to 'Show', language %></td>
-    <td><%= link_to 'Edit', edit_language_path(language) %></td>
-    <td><%= link_to 'Destroy', language, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<h1>Languages</h1>
 
 <br />
 
-<%= link_to 'New Language', new_language_path %>
+<%= link_to '+ ADD', new_language_path %>
+
+<br />
+
+<ul>
+<% @languages.each do |language| %>
+  <li>
+    <%= image_tag language.flag %>
+    <%= language.name %>
+    <%= language.locale %>
+    <%= link_to 'Edit', edit_language_path(language) %>
+    <%= link_to 'Destroy', language, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </li>
+<% end %>
+</ul>

@@ -20,6 +20,9 @@
     <%= f.text_field :locale %>
   </div>
   <div class="field">
+    <% unless @language.flag.blank? %>
+      <%= image_tag @language.flag %>
+    <% end %>
     <%= f.label :flag %><br />
     <%= f.file_field :flag %>
   </div>
