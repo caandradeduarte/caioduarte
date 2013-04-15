@@ -3,7 +3,12 @@ Caioduarte::Application.routes.draw do
 
   resources :users
 
-  resources :bios
+  resources :bios do 
+    collection do
+      get 'edit_multiple'
+      put 'update_multiple'
+    end
+  end
 
   resources :languages
 

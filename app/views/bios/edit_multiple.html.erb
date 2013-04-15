@@ -1,0 +1,18 @@
+<h1>Editing bios</h1>
+
+<%= form_tag update_multiple_bios_path, :method => :put do %>
+	<% for bio in @bios %>
+		<fieldset>
+			<legend>
+				<%= image_tag bio.language.flag %>
+				<%= bio.language.name %>
+			</legend>
+			<%= fields_for 'bios[]', bio do |f| %>
+					<%= f.label :content %><br />
+					<%= f.text_area :content %>
+			<% end %>
+		</fieldset>
+	<% end %>
+
+	<%= submit_tag 'Submit' %>
+<% end %>

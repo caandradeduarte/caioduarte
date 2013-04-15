@@ -1,6 +1,6 @@
 class Language < ActiveRecord::Base
-	has_one :bio
-	has_many :jobs
+	has_one :bio, :dependent => :destroy, :autosave => :true
+	has_many :job_descriptions, :dependent => :destroy
 
   attr_accessible :flag, :locale, :name
 

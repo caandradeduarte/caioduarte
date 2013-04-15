@@ -1,15 +1,14 @@
 class BiosController < ApplicationController
-  def edit
-    @bio = Bio.find(params[:id])
+  def edit_multiple
+    @bios = Bio.all
   end
 
-  def update
-    @bio = Bio.find(params[:id])
-
-    if @bio.update_attributes(params[:bio])
-      redirect_to @bio, notice: 'Bio was successfully updated.'
-    else
-      render action: "edit"
+  def update_multiple
+    params[:bios].each do |bio|
+      @bio = Bio.find bio[0]
+      @bio.update_attributes(bio[1])
     end
+
+    redirect_to :action => 'edit_multiple', :notice => 'Bios were successfully updated'
   end
 end

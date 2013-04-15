@@ -5,6 +5,12 @@ class JobsController < ApplicationController
 
   def new
     @job = Job.new
+    3.times { @job.thumbs.build }
+    Language.all.each do |language|
+      job_description = JobDescription.new
+      job_description.language= language
+      @job.job_descriptions.push job_description
+    end
   end
 
   def edit
@@ -15,7 +21,7 @@ class JobsController < ApplicationController
     @job = Job.new(params[:job])
 
     if @job.save
-      redirect_to @job, notice: 'Job was successfully created.'
+      redirect_to jobs_path, notice: 'Job was successfully created.'
     else
       render action: "new"
     end
@@ -25,7 +31,7 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
 
     if @job.update_attributes(params[:job])
-      redirect_to @job, notice: 'Job was successfully updated.'
+      redirect_to jobs_path, notice: 'Job was successfully updated.'
     else
       render action: "edit"
     end

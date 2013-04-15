@@ -1,23 +1,17 @@
-<h1>Listing jobs</h1>
-
-<table>
-  <tr>
-    <th>Isshown</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @jobs.each do |job| %>
-  <tr>
-    <td><%= job.isShown %></td>
-    <td><%= link_to 'Show', job %></td>
-    <td><%= link_to 'Edit', edit_job_path(job) %></td>
-    <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<h1>Jobs</h1>
 
 <br />
 
-<%= link_to 'New Job', new_job_path %>
+<%= link_to '+ ADD', new_job_path %>
+
+<br />
+
+<ul>
+  <% @jobs.each do |job| %>
+    <li>
+      <%= job.isShown %>
+      <%= link_to 'Edit', edit_job_path(job) %>
+      <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>
+  <% end %>
+</ul>

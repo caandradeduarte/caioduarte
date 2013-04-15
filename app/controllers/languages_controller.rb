@@ -13,9 +13,10 @@ class LanguagesController < ApplicationController
 
   def create
     @language = Language.new(params[:language])
+    @language.bio= Bio.new
 
     if @language.save
-      redirect_to @language, notice: 'Language was successfully created.'
+      redirect_to languages_path, notice: 'Language was successfully created.'
     else
       render action: "new"
     end
@@ -25,7 +26,7 @@ class LanguagesController < ApplicationController
     @language = Language.find(params[:id])
 
     if @language.update_attributes(params[:language])
-      redirect_to @language, notice: 'Language was successfully updated.'
+      redirect_to languages_path, notice: 'Language was successfully updated.'
     else
       render action: "edit"
     end
