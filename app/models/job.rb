@@ -5,5 +5,5 @@ class Job < ActiveRecord::Base
 	accepts_nested_attributes_for :job_descriptions
 	accepts_nested_attributes_for :thumbs
 
-  attr_accessible :isShown
+  attr_accessible :isShown, :job_descriptions_attributes, :thumbs_attributes
 end

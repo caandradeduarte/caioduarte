@@ -9,7 +9,12 @@
 <ul>
   <% @jobs.each do |job| %>
     <li>
-      <%= job.isShown %>
+      <%= job.isShown ? 'Displayed' : 'Hide' %>
+      <%= job.job_descriptions[0].title %>
+      <%= job.job_descriptions[0].description %>
+      <%= image_tag job.thumbs[0].picture.thumb %>
+      <%= image_tag job.thumbs[1].picture.thumb %>
+      <%= image_tag job.thumbs[2].picture.thumb %>
       <%= link_to 'Edit', edit_job_path(job) %>
       <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %>
     </li>

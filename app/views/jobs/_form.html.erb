@@ -1,10 +1,32 @@
 <%= form_for(@job) do |f| %>
-  <%= f.fields_for :job_descriptions do |builder| %>
-    <%= render 'job_description_fields', :f => builder %>
+  <%= f.fields_for :job_descriptions, @job.job_descriptions do |job_descriptions_fields| %>
+    <%= job_descriptions_fields.hidden_field :language_id %>
+    <fieldset>
+      <legend>
+        <%= image_tag job_descriptions_fields.object.language.flag %>
+        <%= job_descriptions_fields.object.language.name %>
+      </legend>
+      <ul>
+        <li>
+          <%= job_descriptions_fields.label :title %><br />
+          <%= job_descriptions_fields.text_field :title %>
+        </li>
+        <li>
+          <%= job_descriptions_fields.label :description %><br />
+          <%= job_descriptions_fields.text_area :description %>
+        </li>
+      </ul>
+    </fieldset>
   <% end %>
   <ul>
-    <%= f.fields_for :thumbs do |builder| %>
-      <%= render 'thumbs_fields', :f => builder %>
+    <%= f.fields_for :thumbs, @job.thumbs do |thumbs_fields| %>
+      <% unless thumbs_fields.object.picture.blank? %>
+        <%= image_tag thumbs_fields.object.picture.thumb %>
+      <% end %>
+      <li>
+        <%= thumbs_fields.label :picture %><br />
+        <%= thumbs_fields.file_field :picture %>
+      </li>
     <% end %>
     <li>
       <%= f.label :isShown %>

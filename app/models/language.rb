@@ -1,4 +1,6 @@
 class Language < ActiveRecord::Base
+	scope :by_locale, ->(locale) { where(:locale => locale)}
+
 	has_one :bio, :dependent => :destroy, :autosave => :true
 	has_many :job_descriptions, :dependent => :destroy
 
