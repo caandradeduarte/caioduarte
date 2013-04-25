@@ -9,6 +9,6 @@ class BiosController < ApplicationController
       @bio.update_attributes(bio[1])
     end
 
-    redirect_to :action => 'edit_multiple', :notice => 'Bios were successfully updated'
+    redirect_to edit_multiple_bios_path, :notice => 'Bios were successfully updated'
   end
 end
