@@ -70,10 +70,10 @@
 }
 
 #tabs_contents{
-  background-color: white;
-	padding: 20px 25px;
-	margin-top: -10px;
-  @include shadow(#ccc, 0, 3px, 6px);
+    background-color: white;
+    padding: 20px 25px;
+    margin-top: -10px;
+    @include shadow(#ccc, 0, 3px, 6px);
 }
 
 /* Remove the rule below if you want the content to be "organic" */

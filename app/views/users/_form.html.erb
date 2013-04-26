@@ -5,26 +5,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-    <%= error_tag @user, :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.text_field :password %>
-    <%= error_tag @user, :password %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.text_field :password_confirmation %>
-    <%= error_tag @user, :password_confirmation %>
-  </div>
-  <div class="field">
-    <%= f.label :isAdmin %><br />
-    <%= f.check_box :isAdmin %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <article>
+    <p>
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+      <%= error_tag @user, :email %>
+    </p>
+    <p>
+      <%= f.label :password %>
+      <%= f.text_field :password %>
+      <%= error_tag @user, :password %>
+    </p>
+    <p>
+      <%= f.label :password_confirmation %>
+      <%= f.text_field :password_confirmation %>
+      <%= error_tag @user, :password_confirmation %>
+    </p>
+    <p>
+      <%= f.label :isAdmin %>
+      <%= f.check_box :isAdmin %>
+    </p>
+  </article>
+    
+  <%= f.submit %>
 <% end %>

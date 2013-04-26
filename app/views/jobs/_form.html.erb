@@ -4,42 +4,83 @@
       <h3><%= pluralize(@job.errors.count, "error") %> prohibited this language from being saved:</h3>
     </div>
   <% end %>
-  <%= f.fields_for :job_descriptions, @job.job_descriptions do |job_descriptions_fields| %>
-    <%= job_descriptions_fields.hidden_field :language_id %>
-    <fieldset>
-      <legend>
-        <%= image_tag job_descriptions_fields.object.language.flag %>
-        <%= job_descriptions_fields.object.language.name %>
-      </legend>
-      <ul>
-        <li>
-          <%= job_descriptions_fields.label :title %><br />
-          <%= job_descriptions_fields.text_field :title %>
-          <%= error_tag job_descriptions_fields.object, :title %>
-        </li>
-        <li>
-          <%= job_descriptions_fields.label :description %><br />
-          <%= job_descriptions_fields.text_area :description %>
-          <%= error_tag job_descriptions_fields.object, :description %>
-        </li>
-      </ul>
-    </fieldset>
-  <% end %>
-  <ul>
-    <%= f.fields_for :thumbs, @job.thumbs do |thumbs_fields| %>
-      <% unless thumbs_fields.object.picture.blank? %>
-        <%= image_tag thumbs_fields.object.picture.thumb %>
-      <% end %>
+
+  <ul id="tabs">
+    <% for job_description in @job.job_descriptions do %>
       <li>
-        <%= thumbs_fields.label :picture %><br />
-        <%= thumbs_fields.file_field :picture %>
-        <%= error_tag thumbs_fields.object, :picture %>
+        <a href="#" title="<%= job_description.language.locale %>">
+          <%= image_tag job_description.language.flag, :height => '15' %>
+          <span>
+            <%= job_description.language.name %>
+          </span>
+        </a>
       </li>
     <% end %>
-    <li>
+  </ul>
+
+  <div id="tabs_contents">
+    <%= f.fields_for :job_descriptions, @job.job_descriptions do |job_descriptions_fields| %>
+      <%= job_descriptions_fields.hidden_field :language_id %>
+      <div id="<%= job_descriptions_fields.object.language.locale %>">
+        <p>
+          <%= job_descriptions_fields.label :title %>
+          <%= job_descriptions_fields.text_field :title %>
+          <%= error_tag job_descriptions_fields.object, :title %>
+        </p>
+        <p>
+          <%= job_descriptions_fields.label :description %>
+          <%= job_descriptions_fields.text_area :description %>
+          <%= error_tag job_descriptions_fields.object, :description %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+
+  <article id="article_pictures">
+    <%= label_tag 'Pictures' %>
+    <span class="hint">
+      *click on the pictures to change them
+    </span>
+    <p>
+      <%= f.fields_for :thumbs, @job.thumbs[0] do |thumb_fields| %>
+        <div id="thumb0">
+          <% unless thumb_fields.object.picture.blank? %>
+            <%= image_tag thumb_fields.object.picture.thumb %>
+          <% else %>
+            <%= image_tag '/assets/add_picture.jpg', :height => '100' %>
+          <% end %>
+          <%= thumb_fields.file_field :picture %>
+          <%= error_tag thumb_fields.object, :picture %>
+        </div>
+      <% end %>
+      <%= f.fields_for :thumbs, @job.thumbs[1] do |thumb_fields| %>
+        <div id="thumb1">
+          <% unless thumb_fields.object.picture.blank? %>
+            <%= image_tag thumb_fields.object.picture.thumb %>
+          <% else %>
+            <%= image_tag '/assets/add_picture.jpg', :height => '100' %>
+          <% end %>
+          <%= thumb_fields.file_field :picture %>
+          <%= error_tag thumb_fields.object, :picture %>
+        </div>
+      <% end %>
+      <%= f.fields_for :thumbs, @job.thumbs[2] do |thumb_fields| %>
+        <div id="thumb2">
+          <% unless thumb_fields.object.picture.blank? %>
+            <%= image_tag thumb_fields.object.picture.thumb %>
+          <% else %>
+            <%= image_tag '/assets/add_picture.jpg', :height => '100' %>
+          <% end %>
+          <%= thumb_fields.file_field :picture %>
+          <%= error_tag thumb_fields.object, :picture %>
+        </div>
+      <% end %>
+    </p>
+    <p>
       <%= f.label :isShown %>
       <%= f.check_box :isShown %>
-    </li>
-  </ul>
+    </p>
+  </article>
+
   <%= f.submit 'Submit' %>
 <% end %>

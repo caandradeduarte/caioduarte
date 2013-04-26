@@ -71,11 +71,23 @@ header nav {
 		border-radius: 3px;
 		@include shadow(#ccc, 0, 3px, 6px);
 	}
+
+	article {
+		background-color: white;
+		padding: 20px 25px;
+		margin-top: 10px;
+		@include shadow(#ccc, 0, 3px, 6px);
+	}
 }
 
-.add_button {
-	@include button(#088A68, #FFF);
-}
+.add_button { @include button(#088A68, #FFF); }
+.back_button{ @include button(#FF8000, #FFF); }
 
+.hint { 
+	color: #CCC;
+	font-size: 12px;
+	font-weight: lighter;
+	display: block;
+}
 .green {color: green;}
 .red {color: red;}

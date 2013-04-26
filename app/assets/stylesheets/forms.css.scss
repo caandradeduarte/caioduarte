@@ -5,9 +5,11 @@ $success-text-color: #468847;
 
 form {
 	label {
-		display: block;
+		display: inline-block;
 		margin: 5px 0;
+		width: 100px !important;
 		color: #444;
+		vertical-align: top;
 	}
 
 	input[type=text], input[type=password], textarea {
@@ -33,6 +35,20 @@ form {
 	textarea {
 		width: 400px;
 		height: 200px;
+	}
+}
+
+#article_pictures{
+	position: relative;
+	top: -10px;
+	padding-top: 0 !important;
+
+	div {
+		display: inline;
+	}
+
+	img {
+		cursor: pointer;
 	}
 }
 

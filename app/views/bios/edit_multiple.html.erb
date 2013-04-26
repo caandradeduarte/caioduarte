@@ -20,8 +20,10 @@
 		<% for bio in @bios %>
 			<div id="<%= bio.language.locale %>">
 				<%= fields_for 'bios[]', bio do |f| %>
-						<%= f.label :content %><br />
+					<p>
+						<%= f.label :content %>
 						<%= f.text_area :content %>
+					</p>
 				<% end %>
 			</div>
 		<% end %>

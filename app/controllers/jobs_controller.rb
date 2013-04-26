@@ -5,7 +5,9 @@ class JobsController < ApplicationController
 
   def new
     @job = Job.new
-    3.times { @job.thumbs.build }
+    3.times do 
+      @job.thumbs.push Thumb.new
+    end
     Language.all.each do |language|
       job_description = JobDescription.new
       job_description.language= language

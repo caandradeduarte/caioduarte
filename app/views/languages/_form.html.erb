@@ -4,26 +4,26 @@
       <h3><%= pluralize(@language.errors.count, "error") %> prohibited this language from being saved:</h3>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-    <%= error_tag @language, :name %>
-  </div>
-  <div class="field">
-    <%= f.label :locale %><br />
-    <%= f.text_field :locale %>
-    <%= error_tag @language, :locale %>
-  </div>
-  <div class="field">
-    <% unless @language.flag.blank? %>
-      <%= image_tag @language.flag %>
-    <% end %>
-    <%= f.label :flag %><br />
-    <%= f.file_field :flag %>
-    <%= error_tag @language, :flag %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <article>
+    <p>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= error_tag @language, :name %>
+    </p>
+    <p>
+      <%= f.label :locale %>
+      <%= f.text_field :locale %>
+      <%= error_tag @language, :locale %>
+    </p>
+    <p>
+      <% unless @language.flag.blank? %>
+        <%= image_tag @language.flag %>
+      <% end %>
+      <%= f.label :flag %>
+      <%= f.file_field :flag %>
+      <%= error_tag @language, :flag %>
+    </p>
+  </article>
+  
+  <%= f.submit %>
 <% end %>
