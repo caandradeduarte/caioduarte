@@ -1,10 +1,9 @@
+@import 'mixins';
+
 $header-height: 55px;
 $content-width: 700px;
 
 $sans-serif-families: "Trebuchet MS", sans-serif;
-
-$error-text-color: #B94A48;
-$success-text-color: #468847;
 
 * {
 	font-family: $sans-serif-families;
@@ -12,12 +11,6 @@ $success-text-color: #468847;
 }
 
 body { background-color: #F5F5F5; }
-
-@mixin shadow($color, $x, $y, $radius) {
-	-moz-box-shadow: $color, $x, $y, $radius;
-	-webkit-box-shadow: $color, $x, $y, $radius;
-	box-shadow: $color, $x, $y, $radius;
-}
 
 header {
 	@include shadow(#CCC, 0, 3px, 6px);
@@ -50,19 +43,7 @@ header nav {
 	line-height: $header-height;
 	float: right;
 	li {
-		display: inline;
-		background-color: #303030;
-		opacity: 0.6;
-		padding: 7px 10px;
-
-		-moz-border-radius: 5px;
-		border-radius: 5px;
-
-		a {
-			font-size: 12px;
-			font-weight: 600;
-			color: #FFF;
-		}
+		@include button(#303030, #FFF);
 	}
 }
 
@@ -73,6 +54,8 @@ header nav {
 
 	h2 { font-size: 1.5em; }
 
+	h3 { font-size: 1.2em; }
+
 	a, a:visited, a:hover {
 		color: #242;
 		&:hover { text-decoration: underline; }
@@ -81,75 +64,18 @@ header nav {
 	ul, form, p {
 		margin: 10px 0;
 	}
-}
 
-form {
-	label {
-		display: block;
-		margin: 5px 0;
-		color: #444;
-	}
-
-	input[type=text], input[type=password], textarea {
-		color: #444;
-		font-size: 12px;
-		border: 1px solid #ccc;
-		padding: 5px;
-		width: 200px;
-		outline: 0;
-
-		@include shadow(rgba(0,0,0,0.1), 0px, 0px, 8px);
-		&:focus { border: 1px solid #c9c9c9; }
-	}
-
-	textarea {
-		width: 400px;
-		height: 200px;
+	img {
+		border: 1px #8A4B08 solid;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		@include shadow(#ccc, 0, 3px, 6px);
 	}
 }
 
-.field_with_errors {
-	display: inline;
-
-	label { color: $error-text-color; }
-
-	input[type=text], input[type=password], textarea {
-		border: 1px solid rgba(189,74,72,0.5);
-		@include shadow(rgba(189,74,72,0.2), 0px, 0px, 8px);
-
-		&:focus { border: 1px solid rgba(189,74,72,0.6); }
-	}
+.add_button {
+	@include button(#088A68, #FFF);
 }
 
-.error_message {
-	margin-left: 5px;
-	display: inline;
-	color: $error-text-color;
-}
-
-.padded_flash {
-	padding: 10px;
-	margin: 10px 0;
-	font-weight: bold;
-	width: 500px;
-}
-
-#error_explanation {
-	border: 1px solid $error-text-color;
-	color: $error-text-color;
-	background-color: #F2DEDE;
-	@extend .padded_flash;
-}
-
-#notice {
-	color: $success-text-color;
-	border: 1px solid $success-text-color;
-	@extend .padded_flash;
-	background-color: #DFF0D8;
-}
-
-#alert {
-	color: $error-text-color;
-	border: 1px solid $error-text-color;
-	background-color: #F2DEDE;
-}
+.green {color: green;}
+.red {color: red;}

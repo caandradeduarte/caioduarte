@@ -1,0 +1,82 @@
+@import 'mixins';
+
+#tabs{
+  overflow: auto;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#tabs li{
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+#tabs a{
+		position: relative;
+    @include shadow(#ccc, -3px, 0, 6px);
+    background: #FF8000;
+    background:    -moz-linear-gradient(220deg, transparent 10px, #FF8000 10px);
+    background:    -webkit-linear-gradient(220deg, transparent 10px, #FF8000 10px);
+    background:     -ms-linear-gradient(220deg, transparent 10px, #FF8000 10px);
+    background:      -o-linear-gradient(220deg, transparent 10px, #FF8000 10px);
+    background:         linear-gradient(220deg, transparent 10px, #FF8000 10px);
+    color: #fff;
+    float: left;
+    height: 30px;
+    padding: 10px 20px 0 20px;
+    text-decoration: none !important;
+    border-bottom: 0.5px solid #CCC transparent;
+    opacity: 0.6;
+
+    img {
+    	float: left;
+    }
+
+    span {
+    	font-weight: bold;
+    	line-height: 15px;
+    	padding-left: 5px;
+    }
+}
+
+#tabs a:hover{
+    background: #FF8000;
+    background:    -moz-linear-gradient(220deg, transparent 10px, #FF8000 10px);
+    background:    -webkit-linear-gradient(220deg, transparent 10px, #FF8000 10px);
+    background:     -ms-linear-gradient(220deg, transparent 10px, #FF8000 10px);
+    background:      -o-linear-gradient(220deg, transparent 10px, #FF8000 10px);
+    background:         linear-gradient(220deg, transparent 10px, #FF8000 10px);
+    color: #FFF;
+    opacity: 1;
+}
+
+#tabs a:focus{
+    outline: 0;
+}
+
+#tabs #current a{
+    background: #fff;
+    background:    -moz-linear-gradient(220deg, transparent 10px, #fff 10px);
+    background:    -webkit-linear-gradient(220deg, transparent 10px, #fff 10px);
+    background:     -ms-linear-gradient(220deg, transparent 10px, #fff 10px);
+    background:      -o-linear-gradient(220deg, transparent 10px, #fff 10px);
+    background:         linear-gradient(220deg, transparent 10px, #fff 10px);
+    text-shadow: none;
+    color: #333;
+    opacity: 1;
+}
+
+#tabs_contents{
+  background-color: white;
+	padding: 20px 25px;
+	margin-top: -10px;
+  @include shadow(#ccc, 0, 3px, 6px);
+}
+
+/* Remove the rule below if you want the content to be "organic" */
+#tabs_contents div{
+    height: auto;
+}

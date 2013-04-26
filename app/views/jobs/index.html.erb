@@ -2,21 +2,38 @@
 
 <br />
 
-<%= link_to '+ ADD', new_job_path %>
+<li class="add_button">
+  <%= link_to '+ ADD', new_job_path %>
+</li>
 
 <br />
+<br />
 
-<ul>
-  <% @jobs.each do |job| %>
-    <li>
-      <%= job.isShown ? 'Displayed' : 'Hide' %>
+<% @jobs.each do |job| %>
+  <article class="item">
+    <div>
+      <%= label_tag :isShown %>
+      <%= job.isShown ? raw('<i class="icon-check icon-large"></i>') : raw('<i class="icon-check-empty icon-large"></i>') %>
+    </div>
+    <div>
+      <%= label_tag job.job_descriptions[0], :title %>
       <%= job.job_descriptions[0].title %>
-      <%= job.job_descriptions[0].description %>
+    </div>
+    <br/>
+    <br/>
+    <div>
       <%= image_tag job.thumbs[0].picture.thumb %>
+    </div>
+    <div>
       <%= image_tag job.thumbs[1].picture.thumb %>
+    </div>
+    <div>
       <%= image_tag job.thumbs[2].picture.thumb %>
-      <%= link_to 'Edit', edit_job_path(job) %>
-      <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </li>
-  <% end %>
-</ul>
+    </div>
+
+    <div class="icons">
+      <%= link_to raw('<i class="icon-edit icon-large"></i>'), edit_job_path(job) %>
+      <%= link_to raw('<i class="icon-remove icon-large"></i>'), job, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  </article>
+<% end %>

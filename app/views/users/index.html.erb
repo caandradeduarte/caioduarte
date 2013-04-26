@@ -2,17 +2,29 @@
 
 <br />
 
-<%= link_to '+ ADD', new_user_path %>
+<li class="add_button">
+  <%= link_to '+ ADD', new_user_path %>
+</li>
 
 <br />
+<br />
 
-<ul>
 <% @users.each do |user| %>
-  <li>
-    <%= user.email %>
-    <%= user.isAdmin %>
-    <%= link_to 'Edit', edit_user_path(user) %>
-    <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
-  </li>
+	<article class="item">
+		<div>
+	  	<%= label_tag :email %>
+	    <%= user.email %>
+    </div>
+    <div>
+	  	<%= label_tag :isAdmin %>
+	  	<span>
+	    	<%= user.isAdmin ? raw('<i class="icon-ok green"></i>') : raw('<i class="icon-remove red"></i>') %>
+	  	</span>
+	  </div>		
+
+	  <div class="icons">
+    	<%= link_to raw('<i class="icon-edit icon-large"></i>'), edit_user_path(user) %>
+  	  <%= link_to raw('<i class="icon-remove icon-large"></i>'), user, method: :delete, data: { confirm: 'Are you sure?' } %>
+		</div>
+	</article>
 <% end %>
-</ul>

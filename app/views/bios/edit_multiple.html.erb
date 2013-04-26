@@ -1,18 +1,31 @@
 <h2>Editing bios</h2>
 
+
+
 <%= form_tag update_multiple_bios_path, :method => :put do %>
-	<% for bio in @bios %>
-		<fieldset>
-			<legend>
-				<%= image_tag bio.language.flag %>
-				<%= bio.language.name %>
-			</legend>
-			<%= fields_for 'bios[]', bio do |f| %>
-					<%= f.label :content %><br />
-					<%= f.text_area :content %>
-			<% end %>
-		</fieldset>
-	<% end %>
+	<ul id="tabs">
+		<% for bio in @bios %>
+			<li>
+			 	<a href="#" title="<%= bio.language.locale %>">
+				 	<%= image_tag bio.language.flag, :height => '15' %>
+					<span>
+						<%= bio.language.name %>
+					</span>
+				</a>
+			</li>
+		<% end %>
+	</ul>
+
+	<div id="tabs_contents">
+		<% for bio in @bios %>
+			<div id="<%= bio.language.locale %>">
+				<%= fields_for 'bios[]', bio do |f| %>
+						<%= f.label :content %><br />
+						<%= f.text_area :content %>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
 
 	<%= submit_tag 'Submit' %>
 <% end %>

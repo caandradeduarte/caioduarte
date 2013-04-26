@@ -2,18 +2,30 @@
 
 <br />
 
-<%= link_to '+ ADD', new_language_path %>
+<li class="add_button">
+  <%= link_to '+ ADD', new_language_path %>
+</li>
 
 <br />
+<br />
 
-<ul>
 <% @languages.each do |language| %>
-  <li>
-    <%= image_tag language.flag %>
-    <%= language.name %>
-    <%= language.locale %>
-    <%= link_to 'Edit', edit_language_path(language) %>
-    <%= link_to 'Destroy', language, method: :delete, data: { confirm: 'Are you sure?' } %>
-  </li>
+	<article class="item">
+		<div>
+	  	<%= image_tag language.flag %>
+    </div>
+    <div>
+    	<%= label_tag :name %>
+    	<%= language.name %>
+	  </div>
+	  <div>
+	  	<%= label_tag :locale %>
+    	<%= language.locale %>
+	  </div>
+
+	  <div class="icons">
+    	<%= link_to raw('<i class="icon-edit icon-large"></i>'), edit_language_path(language) %>
+  	  <%= link_to raw('<i class="icon-remove icon-large"></i>'), language, method: :delete, data: { confirm: 'Are you sure?' } %>
+		</div>
+	</article>
 <% end %>
-</ul>

@@ -1,4 +1,9 @@
 <%= form_for(@job) do |f| %>
+  <% if @job.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@job.errors.count, "error") %> prohibited this language from being saved:</h3>
+    </div>
+  <% end %>
   <%= f.fields_for :job_descriptions, @job.job_descriptions do |job_descriptions_fields| %>
     <%= job_descriptions_fields.hidden_field :language_id %>
     <fieldset>
@@ -10,10 +15,12 @@
         <li>
           <%= job_descriptions_fields.label :title %><br />
           <%= job_descriptions_fields.text_field :title %>
+          <%= error_tag job_descriptions_fields.object, :title %>
         </li>
         <li>
           <%= job_descriptions_fields.label :description %><br />
           <%= job_descriptions_fields.text_area :description %>
+          <%= error_tag job_descriptions_fields.object, :description %>
         </li>
       </ul>
     </fieldset>
@@ -26,6 +33,7 @@
       <li>
         <%= thumbs_fields.label :picture %><br />
         <%= thumbs_fields.file_field :picture %>
+        <%= error_tag thumbs_fields.object, :picture %>
       </li>
     <% end %>
     <li>

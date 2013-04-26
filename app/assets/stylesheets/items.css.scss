@@ -1,0 +1,33 @@
+@import 'mixins';
+
+.item {
+	margin: 0 auto;
+	position: relative;
+
+	div {
+		display: inline-block;
+		margin: 0 20px;
+
+		&.icons {
+			position: absolute;
+			right: 20px;
+			top: 20px;
+			margin: 0;
+		}
+		a, a:hover {
+			text-decoration: none !important;
+		}
+	}
+
+	label {
+		display: block;
+		margin: 5px 0;
+		color: #000;
+		font-weight: bold;
+	}
+
+	background-color: white;
+	padding: 20px 25px;
+	margin-top: 10px;
+	@include shadow(#ccc, 0, 3px, 6px);
+}
