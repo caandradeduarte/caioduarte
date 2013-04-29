@@ -9,7 +9,9 @@
 <body>
 	<header>
 		<div id="header-wrap">
-			<h1><%= link_to "Caio Duarte", root_path %></h1>
+			<h1>
+				<%= link_to image_tag('/assets/logo133x45.png', :alt => 'Caio Duarte', :title => 'Click to go back home page'), root_path %>
+			</h1>
 			<nav>
 				<ul>
 					<li><%= link_to "Users", users_path %></li>

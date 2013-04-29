@@ -2,6 +2,9 @@
 
 $header-height: 55px;
 $content-width: 700px;
+$green: #9CB832;
+$orange: #CB6125;
+$dark-orange: #7A251D;
 
 $sans-serif-families: "Trebuchet MS", sans-serif;
 
@@ -24,12 +27,13 @@ header {
 	}
 
 	height: $header-height;
-	background: url('/assets/pattern.jpg');
+	background: #888;
 
 	h1 {
 		float: left;
+		margin-top: 5px;
 		a {
-			color: #333;
+			color: #FFF;
 			font-weight: 400;
 			font-size: 2.5em;
 			&:hover {
@@ -66,7 +70,7 @@ header nav {
 	}
 
 	img {
-		border: 1px #8A4B08 solid;
+		border: 1px $dark-orange solid;
 		-moz-border-radius: 3px;
 		border-radius: 3px;
 		@include shadow(#ccc, 0, 3px, 6px);
@@ -80,8 +84,7 @@ header nav {
 	}
 }
 
-.add_button { @include button(#088A68, #FFF); }
-.back_button{ @include button(#FF8000, #FFF); }
+.add_button { @include button($green, #FFF); }
 
 .hint { 
 	color: #CCC;
@@ -89,5 +92,5 @@ header nav {
 	font-weight: lighter;
 	display: block;
 }
-.green {color: green;}
-.red {color: red;}
+.green {color: $green;}
+.red {color: $dark-orange;}
