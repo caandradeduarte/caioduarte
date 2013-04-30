@@ -25,12 +25,10 @@
         <p>
           <%= job_descriptions_fields.label :title %>
           <%= job_descriptions_fields.text_field :title %>
-          <%= error_tag job_descriptions_fields.object, :title %>
         </p>
         <p>
           <%= job_descriptions_fields.label :description %>
           <%= job_descriptions_fields.text_area :description %>
-          <%= error_tag job_descriptions_fields.object, :description %>
         </p>
       </div>
     <% end %>
@@ -43,36 +41,33 @@
     </span>
     <p>
       <%= f.fields_for :thumbs, @job.thumbs[0] do |thumb_fields| %>
-        <div id="thumb0">
+        <div id="thumb0" class="thumb">
           <% unless thumb_fields.object.picture.blank? %>
             <%= image_tag thumb_fields.object.picture.thumb %>
           <% else %>
-            <%= image_tag '/assets/add_picture.jpg', :height => '100' %>
+            <div class="no_image"><span>ADD IMAGE</span></div>
           <% end %>
           <%= thumb_fields.file_field :picture %>
-          <%= error_tag thumb_fields.object, :picture %>
         </div>
       <% end %>
       <%= f.fields_for :thumbs, @job.thumbs[1] do |thumb_fields| %>
-        <div id="thumb1">
+        <div id="thumb1" class="thumb">
           <% unless thumb_fields.object.picture.blank? %>
             <%= image_tag thumb_fields.object.picture.thumb %>
           <% else %>
-            <%= image_tag '/assets/add_picture.jpg', :height => '100' %>
+            <div class="no_image"><span>ADD IMAGE</span></div>
           <% end %>
           <%= thumb_fields.file_field :picture %>
-          <%= error_tag thumb_fields.object, :picture %>
         </div>
       <% end %>
       <%= f.fields_for :thumbs, @job.thumbs[2] do |thumb_fields| %>
-        <div id="thumb2">
+        <div id="thumb2" class="thumb">
           <% unless thumb_fields.object.picture.blank? %>
             <%= image_tag thumb_fields.object.picture.thumb %>
           <% else %>
-            <%= image_tag '/assets/add_picture.jpg', :height => '100' %>
+            <div class="no_image"><span>ADD IMAGE</span></div>
           <% end %>
           <%= thumb_fields.file_field :picture %>
-          <%= error_tag thumb_fields.object, :picture %>
         </div>
       <% end %>
     </p>
@@ -82,5 +77,8 @@
     </p>
   </article>
 
-  <%= f.submit 'Submit' %>
+  <%= f.submit %>
+  <span class='cancel_button'>
+    <%= link_to 'Cancel', jobs_path %>
+  </span>
 <% end %>

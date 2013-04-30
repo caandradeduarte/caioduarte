@@ -1,0 +1,47 @@
+@import 'mixins';
+
+$dark-orange: #7A251D;
+
+#article_pictures{
+	position: relative;
+	top: -10px;
+	padding-top: 0 !important;
+}
+
+.thumb {
+	cursor: pointer;
+	display: inline-block;
+	margin-right: 10px;
+
+	img {
+		width: 100px;
+		height: 100px;
+	}
+}
+
+.no_image {
+	width: 100px;
+	height: 100px;
+	position: relative;
+	
+	span {
+		position: absolute;
+		top: 42px;
+		font-size: 16px;
+		text-align: center;
+		width: 100%;
+	}
+
+	border: 1px $dark-orange solid;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	@include shadow(#ccc, 0, 3px, 6px);
+
+	background: -moz-radial-gradient(center, ellipse cover,  rgba(182,216,151,0.6) 0%, rgba(150,197,111,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(182,216,151,0.6)), color-stop(100%,rgba(150,197,111,1))); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  rgba(182,216,151,0.6) 0%,rgba(150,197,111,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  rgba(182,216,151,0.6) 0%,rgba(150,197,111,1) 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  rgba(182,216,151,0.6) 0%,rgba(150,197,111,1) 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  rgba(182,216,151,0.6) 0%,rgba(150,197,111,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99b6d897', endColorstr='#96c56f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}

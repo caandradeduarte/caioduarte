@@ -85,6 +85,7 @@ header nav {
 }
 
 .add_button { @include button($green, #FFF); }
+.cancel_button { @include button($orange, #FFF); }
 
 .hint { 
 	color: #CCC;

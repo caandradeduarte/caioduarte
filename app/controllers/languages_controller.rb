@@ -34,8 +34,11 @@ class LanguagesController < ApplicationController
 
   def destroy
     @language = Language.find(params[:id])
-    @language.destroy
-  
-    redirect_to languages_url
+    
+    if @language.destroy
+      redirect_to languages_url
+    else
+      redirect_to languages_url, :alert => "#{@language.errors[:base][0].to_s}"
+    end
   end
 end
