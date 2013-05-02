@@ -1,4 +1,7 @@
 pt-BR:
+  application:
+    title: Caio Duarte - Editor de Conteúdo
+    logo_title: Clique para voltar à página principal
   home:
     index:
       title: Bem vindo ao editor de conteúdos do meu site!
@@ -24,10 +27,29 @@ pt-BR:
   jobs:
     index:
       title: Trabalhos
+      no_image: Sem Imagem
     new: 
       title: Novo Trabalho
     edit:
       title: Editar Trabalho
+    form:
+      thumbs: Imagens
+      thumbs_hint: '*Clique nas imagens para alterá-las'
+      add_image: Adicionar Imagem
+      submit: Enviar
+
+  general:
+    form_error: Há erros no formulário, por favor verifique.
+
+  layout:
+    users: Usuários
+    languages: Idiomas
+    bio: Biografia
+    jobs: Trabalhos
+
+  links:
+    add: + Adicionar
+    cancel: Cancelar
 
   activerecord:
     models:
@@ -50,7 +72,7 @@ pt-BR:
       bio:
         content: Conteúdo
       job:
-        isShown: Exibir?
+        isShown: Exibir na home?
       thumb: 
         picture: Imagem
       job_description:

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Caio Duarte</title>
+  <title><%= t 'application.title' %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -10,14 +10,14 @@
 	<header>
 		<div id="header-wrap">
 			<h1>
-				<%= link_to image_tag('/assets/logo133x45.png', :alt => 'Caio Duarte', :title => 'Click to go back home page'), root_path %>
+				<%= link_to image_tag('/assets/logo133x45.png', :alt => t('application.title'), :title => t('application.logo_title') ), root_path %>
 			</h1>
 			<nav>
 				<ul>
-					<li><%= link_to "Users", users_path %></li>
-					<li><%= link_to "Languages", languages_path %></li>
-					<li><%= link_to "Bio", edit_multiple_bios_path %></li>
-					<li><%= link_to "Jobs", jobs_path %></li>
+					<li><%= link_to t('layout.users'), users_path %></li>
+					<li><%= link_to t('layout.languages'), languages_path %></li>
+					<li><%= link_to t('layout.bio'), edit_multiple_bios_path %></li>
+					<li><%= link_to t('layout.jobs'), jobs_path %></li>
 				</ul>
 			</nav>
 		</div>

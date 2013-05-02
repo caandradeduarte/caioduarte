@@ -3,7 +3,7 @@
 <br />
 
 <span class="add_button">
-  <%= link_to '+ ADD', new_job_path %>
+  <%= link_to t('links.add'), new_job_path %>
 </span>
 
 <br />
@@ -25,21 +25,21 @@
       <% unless job.thumbs[0].picture.blank? %>
         <%= image_tag job.thumbs[0].picture.thumb %>
       <% else %>
-        <div class="no_image">NO IMAGE</div>
+        <div class="no_image"><span><%= t('.no_image') %></span></div>
       <% end %>
     </div>
     <div>
       <% unless job.thumbs[1].picture.blank? %>
         <%= image_tag job.thumbs[1].picture.thumb %>
       <% else %>
-        <div class="no_image">NO IMAGE</div>
+        <div class="no_image"><span><%= t('.no_image') %></span></div>
       <% end %>
     </div>
     <div>
       <% unless job.thumbs[2].picture.blank? %>
         <%= image_tag job.thumbs[2].picture.thumb %>
       <% else %>
-        <div class="no_image">NO IMAGE</div>
+        <div class="no_image"><span><%= t('.no_image') %></span></div>
       <% end %>
     </div>
 

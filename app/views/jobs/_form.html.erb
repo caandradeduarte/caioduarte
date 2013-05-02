@@ -35,9 +35,9 @@
   </div>
 
   <article id="article_pictures">
-    <%= label_tag 'Pictures' %>
+    <%= label_tag t('.thumbs') %>
     <span class="hint">
-      *click on the pictures to change them
+      <%= t('.thumbs_hint') %>
     </span>
     <p>
       <%= f.fields_for :thumbs, @job.thumbs[0] do |thumb_fields| %>
@@ -45,7 +45,7 @@
           <% unless thumb_fields.object.picture.blank? %>
             <%= image_tag thumb_fields.object.picture.thumb %>
           <% else %>
-            <div class="no_image"><span>ADD IMAGE</span></div>
+            <div class="no_image"><span><%= t('.add_image') %></span></div>
           <% end %>
           <%= thumb_fields.file_field :picture %>
         </div>
@@ -55,7 +55,7 @@
           <% unless thumb_fields.object.picture.blank? %>
             <%= image_tag thumb_fields.object.picture.thumb %>
           <% else %>
-            <div class="no_image"><span>ADD IMAGE</span></div>
+            <div class="no_image"><span><%= t('.add_image') %></span></div>
           <% end %>
           <%= thumb_fields.file_field :picture %>
         </div>
@@ -65,7 +65,7 @@
           <% unless thumb_fields.object.picture.blank? %>
             <%= image_tag thumb_fields.object.picture.thumb %>
           <% else %>
-            <div class="no_image"><span>ADD IMAGE</span></div>
+            <div class="no_image"><span><%= t('.add_image') %></span></div>
           <% end %>
           <%= thumb_fields.file_field :picture %>
         </div>
@@ -79,6 +79,6 @@
 
   <%= f.submit %>
   <span class='cancel_button'>
-    <%= link_to 'Cancel', jobs_path %>
+    <%= link_to t('links.cancel'), jobs_path %>
   </span>
 <% end %>
