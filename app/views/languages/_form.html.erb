@@ -1,9 +1,10 @@
 <%= form_for(@language) do |f| %>
   <% if @language.errors.any? %>
     <div id="error_explanation">
-      <h3><%= pluralize(@language.errors.count, "error") %> prohibited this language from being saved:</h3>
+      <%= t 'general.form_error' %>
     </div>
   <% end %>
+  
   <article>
     <p>
       <%= f.label :name %>

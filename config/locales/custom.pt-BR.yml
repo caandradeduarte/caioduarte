@@ -1,0 +1,58 @@
+pt-BR:
+  home:
+    index:
+      title: Bem vindo ao editor de conteúdos do meu site!
+      text: Se você foi convidado a acessar meu editor, use o menu acima para conhecer as funcionalidades e ver como esse editor funciona.
+      thanks: Obrigado pela visita :)
+  users:
+    index:
+      title: Usuários
+    new:
+      title: Novo Usuário
+    edit:
+      title: Editar Usuário
+  languages:
+    index:
+      title: Idiomas
+    new:
+      title: Novo Idioma
+    edit:
+      title: Editar Idioma
+  bios:
+    edit_multiple:
+      title: Editar Bio
+  jobs:
+    index:
+      title: Trabalhos
+    new: 
+      title: Novo Trabalho
+    edit:
+      title: Editar Trabalho
+
+  activerecord:
+    models:
+      user: Usuário
+      language: Idioma
+      bio: Biografia
+      job: Trabalho
+      thumb: Imagem
+      job_description: Descrição do Trabalho
+    attributes:
+      user:
+        isAdmin: É Administrador?
+        email: E-mail
+        password: Senha
+        password_confirmation: Confirmação de Senha
+      language:
+        flag: Bandeira
+        locale: Locale
+        name: Nome
+      bio:
+        content: Conteúdo
+      job:
+        isShown: Exibir?
+      thumb: 
+        picture: Imagem
+      job_description:
+        description: Descrição
+        title: Título

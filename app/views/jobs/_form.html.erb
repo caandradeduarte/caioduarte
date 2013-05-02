@@ -1,7 +1,7 @@
 <%= form_for(@job) do |f| %>
   <% if @job.errors.any? %>
     <div id="error_explanation">
-      <h3><%= pluralize(@job.errors.count, "error") %> prohibited this language from being saved:</h3>
+      <%= t 'general.form_error' %>
     </div>
   <% end %>
 
