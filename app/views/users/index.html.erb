@@ -12,11 +12,11 @@
 <% @users.each do |user| %>
 	<article class="item">
 		<div>
-	  	<%= label_tag :email %>
+	  	<%= label_tag t('activerecord.attributes.user.email') %>
 	    <%= user.email %>
     </div>
     <div>
-	  	<%= label_tag :isAdmin %>
+	  	<%= label_tag t('activerecord.attributes.user.isAdmin') %>
 	  	<span>
 	    	<%= user.isAdmin ? raw('<i class="icon-ok green"></i>') : raw('<i class="icon-remove red"></i>') %>
 	  	</span>
