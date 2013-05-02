@@ -26,7 +26,7 @@ class Language < ActiveRecord::Base
 
   def confirm_presence_of_other_language
   	if Language.all.count == 1
-  		errors.add(:base, 'The system needs at least one language!')
+  		errors.add(:base, I18n.translate('flash.alert.language.last_one'))
   		return false
   	end
   end

@@ -40,6 +40,25 @@ pt-BR:
 
   general:
     form_error: Há erros no formulário, por favor verifique.
+  flash:
+    alert:
+      language:
+        last_one: The system needs at least one language!
+    notice:
+      bio:
+        updated: Biografia atualizada com sucesso!
+      job:
+        created: Trabalho adicionado com sucesso!
+        updated: Trabalho atualizado com sucesso!
+      language:
+        created: Idioma adicionado com sucesso!
+        updated: Idioma atualizado com sucesso!
+      user:
+        created: Usuário adicionado com sucesso!
+        updated: Usuário atualizado com sucesso!
+
+  dialogs:
+    confirm: Tem certeza disso?
 
   layout:
     users: Usuários

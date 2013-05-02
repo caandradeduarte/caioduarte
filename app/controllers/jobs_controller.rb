@@ -23,7 +23,7 @@ class JobsController < ApplicationController
     @job = Job.new(params[:job])
 
     if @job.save
-      redirect_to jobs_path, notice: 'Job was successfully created.'
+      redirect_to jobs_path, :notice => t('flash.notice.job.created')
     else
       render action: "new"
     end
@@ -33,7 +33,7 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
 
     if @job.update_attributes(params[:job])
-      redirect_to jobs_path, notice: 'Job was successfully updated.'
+      redirect_to jobs_path, :notice => t('flash.notice.job.updated')
     else
       render action: "edit"
     end

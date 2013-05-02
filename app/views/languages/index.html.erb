@@ -25,7 +25,7 @@
 
 	  <div class="icons">
     	<%= link_to raw('<i class="icon-edit icon-large"></i>'), edit_language_path(language) %>
-  	  <%= link_to raw('<i class="icon-remove icon-large"></i>'), language, method: :delete, data: { confirm: 'Are you sure?' } %>
+  	  <%= link_to raw('<i class="icon-remove icon-large"></i>'), language, method: :delete, data: { :confirm => t('dialogs.confirm') } %>
 		</div>
 	</article>
 <% end %>
