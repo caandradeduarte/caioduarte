@@ -1,7 +1,8 @@
 pt-BR:
-  application:
-    title: Caio Duarte - Editor de Conteúdo
-    logo_title: Clique para voltar à página principal
+  layouts:
+    application:
+      title: Caio Duarte - Editor de Conteúdo
+      logo_title: Clique para voltar à página principal
   home:
     index:
       title: Bem vindo ao editor de conteúdos do meu site!
@@ -37,14 +38,20 @@ pt-BR:
       thumbs_hint: '*Clique nas imagens para alterá-las'
       add_image: Adicionar Imagem
       submit: Enviar
+  user_sessions:
+    new:
+      title: Login
 
   general:
     form_error: Há erros no formulário, por favor verifique.
   flash:
     alert:
+      needs_login: Você precisa estar logado para gerenciar o conteúdo!
       language:
-        last_one: The system needs at least one language!
+        last_one: O sistema precisa de ao menos um idioma!
     notice:
+      signed_in: Login efetuado com sucesso!
+      signed_out: Logout efetuado com sucesso!
       bio:
         updated: Biografia atualizada com sucesso!
       job:
@@ -65,10 +72,24 @@ pt-BR:
     languages: Idiomas
     bio: Biografia
     jobs: Trabalhos
+    login: Login
+    logout: Logout
 
   links:
     add: + Adicionar
     cancel: Cancelar
+
+  helpers:
+    submit:
+      user_session:
+        create: 'Entrar'
+  activemodel:
+    errors:
+      models:
+        user_session:
+          attributes:
+            base:
+              invalid_login: Usuário ou senha inválidos!
 
   activerecord:
     models:
@@ -97,3 +118,6 @@ pt-BR:
       job_description:
         description: Descrição
         title: Título
+      user_session:
+        email: E-mail
+        password: Senha

@@ -1,4 +1,6 @@
 class BiosController < ApplicationController
+  before_filter :require_authentication, :only => :update_multiple
+
   def edit_multiple
     @bios = Bio.all
   end

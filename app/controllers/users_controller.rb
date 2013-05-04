@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :require_authentication, :only => [:create, :update, :destroy]
+  
   def index
     @users = User.all
   end

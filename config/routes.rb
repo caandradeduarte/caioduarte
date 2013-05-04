@@ -1,16 +1,18 @@
 Caioduarte::Application.routes.draw do
-  resources :jobs, :path => 'jobs'
+  resources :jobs, :except => :show
 
-  resources :users, :path => 'users'
+  resources :users, :except => :show
 
-  resources :bios, :path => 'bios' do 
+  resource :bios do 
     collection do
       get 'edit_multiple'
       put 'update_multiple'
     end
   end
 
-  resources :languages, :path => 'languages'
+  resources :languages, :except => :show
+
+  resource :user_sessions, :only => [:create, :new, :destroy]
 
   root :to => "home#index"
 end

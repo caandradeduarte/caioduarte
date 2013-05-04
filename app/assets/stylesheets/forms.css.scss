@@ -83,5 +83,6 @@ form {
 #alert {
 	color: $error-text-color;
 	border: 1px solid $error-text-color;
+	@extend .padded_flash;
 	background-color: #F2DEDE;
 }

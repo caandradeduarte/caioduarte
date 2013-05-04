@@ -1,4 +1,6 @@
 class JobsController < ApplicationController
+  before_filter :require_authentication, :only => [:create, :update, :destroy]
+  
   def index
     @jobs = Job.all
   end

@@ -1,4 +1,6 @@
 class LanguagesController < ApplicationController
+  before_filter :require_authentication, :only => [:create, :update, :destroy]
+
   def index
     @languages = Language.all
   end
