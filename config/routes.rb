@@ -1,18 +1,23 @@
 Caioduarte::Application.routes.draw do
-  resources :jobs, :except => :show
+  LOCALES = /en|pt\-BR/
 
-  resources :users, :except => :show
+  scope "(:locale)", :locale => LOCALES do
+    resources :jobs, :except => :show
 
-  resource :bios do 
-    collection do
-      get 'edit_multiple'
-      put 'update_multiple'
+    resources :users, :except => :show
+
+    resource :bios do 
+      collection do
+        get 'edit_multiple'
+        put 'update_multiple'
+      end
     end
+
+    resources :languages, :except => :show
+
+    resource :user_sessions, :only => [:create, :new, :destroy]
   end
 
-  resources :languages, :except => :show
-
-  resource :user_sessions, :only => [:create, :new, :destroy]
-
+  match '/:locale' => 'home#index', :locale => LOCALES
   root :to => "home#index"
 end

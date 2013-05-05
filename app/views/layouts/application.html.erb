@@ -12,7 +12,7 @@
 			<h1>
 				<%= link_to image_tag('/assets/logo133x45.png', :alt => t('.title'), :title => t('.logo_title') ), root_path %>
 			</h1>
-			<nav>
+			<nav id="menu">
 				<ul>
 					<li><%= link_to t('layout.users'), users_path %></li>
 					<li><%= link_to t('layout.languages'), languages_path %></li>
@@ -20,13 +20,19 @@
 					<li><%= link_to t('layout.jobs'), jobs_path %></li>
 					<li>
 						<% unless user_signed_in? %>
-							<%= link_to t('layout.login'), new_user_session_path %>
+							<%= link_to t('layout.login'), :controller => :user_sessions, :action => :new %>
 						<% else %>
 							<%= link_to t('layout.logout'), user_sessions_path, :method => :delete %>
 						<% end %>
 				</ul>
 			</nav>
 		</div>
+		<nav id="languages">
+			<ul>
+				<li><%= link_to image_tag('/assets/pt-BR.jpg', :height => '20'), :locale => 'pt-BR' %></li>
+				<li><%= link_to image_tag('/assets/en.jpg', :height => '20'), :locale => 'en' %></li>
+			</ul>
+		</nav>
 	</header>
 	<div id="content">
 		<% if notice.present? %>

@@ -1,0 +1,123 @@
+en:
+  layouts:
+    application:
+      title: Caio Duarte - Content Editor
+      logo_title: Click to go back home page
+  home:
+    index:
+      title: Welcome to my content editor!
+      text: If you were invited to see my editor, use the navigation bar above to see the functionalities and how it works.
+      thanks: Thanks for come! :)
+  users:
+    index:
+      title: Users
+    new:
+      title: New User
+    edit:
+      title: Edit User
+  languages:
+    index:
+      title: Language
+    new:
+      title: New Language
+    edit:
+      title: Edit Language
+  bios:
+    edit_multiple:
+      title: Edit bio
+  jobs:
+    index:
+      title: Jobs
+      no_image: No Image
+    new: 
+      title: New Job
+    edit:
+      title: Edit Job
+    form:
+      thumbs: Pictures
+      thumbs_hint: '*Click on the pictures to change them'
+      add_image: Add Picture
+      submit: Send
+  user_sessions:
+    new:
+      title: Login
+
+  general:
+    form_error: There are errors, please check them.
+  flash:
+    alert:
+      needs_login: You must be logged in to manage the content!
+      language:
+        last_one: The system needs at least one language!
+    notice:
+      signed_in: Logged in successfully!
+      signed_out: Logged out successfully!
+      bio:
+        updated: Bio updated successfully
+      job:
+        created: Job created successfully!
+        updated: Job updated successfully!
+      language:
+        created: Language created successfully!
+        updated: Language updated successfully!
+      user:
+        created: User created successfully!
+        updated: User updated successfully!
+
+  dialogs:
+    confirm: Are you sure?
+
+  layout:
+    users: Users
+    languages: Languages
+    bio: Bio
+    jobs: Jobs
+    login: Login
+    logout: Logout
+
+  links:
+    add: + Add
+    cancel: Cancel
+
+  helpers:
+    submit:
+      user_session:
+        create: 'Login'
+  activemodel:
+    errors:
+      models:
+        user_session:
+          attributes:
+            base:
+              invalid_login: Wrong user or password!
+
+  activerecord:
+    models:
+      user: User
+      language: Language
+      bio: Bio
+      job: Job
+      thumb: Picture
+      job_description: Job Description
+    attributes:
+      user:
+        isAdmin: Is Admin?
+        email: E-mail
+        password: Password
+        password_confirmation: Password Confirmation
+      language:
+        flag: Flag
+        locale: Locale
+        name: Name
+      bio:
+        content: Content
+      job:
+        isShown: Show at home?
+      thumb: 
+        picture: Picture
+      job_description:
+        description: Description
+        title: Title
+      user_session:
+        email: E-mail
+        password: Password
