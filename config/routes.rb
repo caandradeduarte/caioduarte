@@ -1,6 +1,11 @@
 Caioduarte::Application.routes.draw do
   LOCALES = /en|pt\-BR/
 
+  scope "(:locale)", :locale => LOCALES do
+    match '/:locale' => 'home#index', :locale => LOCALES
+    root :to => "home#index"
+  end
+
   namespace :admin do
     scope "(:locale)", :locale => LOCALES do
       resources :jobs, :except => :show

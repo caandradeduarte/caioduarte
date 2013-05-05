@@ -3,6 +3,8 @@ en:
     admin:
       title: Caio Duarte - Content Editor
       logo_title: Click to go back home page
+    application:
+        title: Caio Duarte - Portfolio
   admin:
     home:
       index:

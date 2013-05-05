@@ -10,7 +10,7 @@
 <br />
 
 <% @jobs.each do |job| %>
-  <article class="item">
+  <article class="item jobs">
     <div>
       <%= label_tag job.job_descriptions[0], t('activerecord.attributes.job_description.title') %>
       <%= job.job_descriptions[0].title %>

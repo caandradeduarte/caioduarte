@@ -3,6 +3,8 @@ pt-BR:
       admin:
         title: Caio Duarte - Editor de Conteúdo
         logo_title: Clique para voltar à página principal
+      application:
+        title: Caio Duarte - Portfólio
   admin:
     home:
       index:

@@ -84,7 +84,7 @@ header {
 		margin: 10px 0;
 	}
 
-	img { @extend .img_border; }
+	.jobs { img { @extend .img_border; } }
 
 	article {
 		background-color: white;
