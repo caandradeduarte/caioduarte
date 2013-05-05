@@ -1,4 +1,4 @@
-class BiosController < ApplicationController
+class Admin::BiosController < Admin::BaseController
   before_filter :require_authentication, :only => :update_multiple
 
   def edit_multiple
@@ -11,6 +11,6 @@ class BiosController < ApplicationController
       @bio.update_attributes(bio[1])
     end
 
-    redirect_to edit_multiple_bios_path, :notice => t('flash.notice.bio.updated')
+    redirect_to edit_multiple_admin_bios_path, :notice => t('flash.notice.bio.updated')
   end
 end

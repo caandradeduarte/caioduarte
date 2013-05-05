@@ -1,6 +1,6 @@
 <h2><%= t '.title' %></h2>
 
-<%= form_tag update_multiple_bios_path, :method => :put do %>
+<%= form_tag update_multiple_admin_bios_path, :method => :put do %>
 	<ul id="tabs">
 		<% for bio in @bios %>
 			<li>
@@ -27,5 +27,5 @@
 		<% end %>
 	</div>
 
-	<%= submit_tag 'Update Bio' %>
+	<%= submit_tag t('.submit') %>
 <% end %>

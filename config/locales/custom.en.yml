@@ -1,46 +1,48 @@
 en:
   layouts:
-    application:
+    admin:
       title: Caio Duarte - Content Editor
       logo_title: Click to go back home page
-  home:
-    index:
-      title: Welcome to my content editor!
-      text: If you were invited to see my editor, use the navigation bar above to see the functionalities and how it works.
-      thanks: Thanks for come! :)
-  users:
-    index:
-      title: Users
-    new:
-      title: New User
-    edit:
-      title: Edit User
-  languages:
-    index:
-      title: Language
-    new:
-      title: New Language
-    edit:
-      title: Edit Language
-  bios:
-    edit_multiple:
-      title: Edit bio
-  jobs:
-    index:
-      title: Jobs
-      no_image: No Image
-    new: 
-      title: New Job
-    edit:
-      title: Edit Job
-    form:
-      thumbs: Pictures
-      thumbs_hint: '*Click on the pictures to change them'
-      add_image: Add Picture
-      submit: Send
-  user_sessions:
-    new:
-      title: Login
+  admin:
+    home:
+      index:
+        title: Welcome to my content editor!
+        text: If you were invited to see my editor, use the navigation bar above to see the functionalities and how it works.
+        thanks: Thanks for come! :)
+    users:
+      index:
+        title: Users
+      new:
+        title: New User
+      edit:
+        title: Edit User
+    languages:
+      index:
+        title: Language
+      new:
+        title: New Language
+      edit:
+        title: Edit Language
+    bios:
+      edit_multiple:
+        title: Edit bio
+        submit: Update Bio
+    jobs:
+      index:
+        title: Jobs
+        no_image: No Image
+      new: 
+        title: New Job
+      edit:
+        title: Edit Job
+      form:
+        thumbs: Pictures
+        thumbs_hint: '*Click on the pictures to change them'
+        add_image: Add Picture
+        submit: Send
+    user_sessions:
+      new:
+        title: Login
 
   general:
     form_error: There are errors, please check them.

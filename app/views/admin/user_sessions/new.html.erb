@@ -6,7 +6,7 @@
 	</div>
 <% end %>
 
-<%= form_for @session do |f| %>
+<%= form_for [:admin, @session] do |f| %>
 	<article>
 		<p>
 			<%= f.label :email %>

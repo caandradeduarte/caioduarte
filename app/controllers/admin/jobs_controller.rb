@@ -1,4 +1,4 @@
-class JobsController < ApplicationController
+class Admin::JobsController < Admin::BaseController
   before_filter :require_authentication, :only => [:create, :update, :destroy]
   
   def index
@@ -25,7 +25,7 @@ class JobsController < ApplicationController
     @job = Job.new(params[:job])
 
     if @job.save
-      redirect_to jobs_path, :notice => t('flash.notice.job.created')
+      redirect_to admin_jobs_path, :notice => t('flash.notice.job.created')
     else
       render action: "new"
     end
@@ -35,7 +35,7 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
 
     if @job.update_attributes(params[:job])
-      redirect_to jobs_path, :notice => t('flash.notice.job.updated')
+      redirect_to admin_jobs_path, :notice => t('flash.notice.job.updated')
     else
       render action: "edit"
     end
@@ -45,6 +45,6 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
     @job.destroy
 
-    redirect_to jobs_url
+    redirect_to admin_jobs_url
   end
 end

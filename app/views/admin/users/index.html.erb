@@ -3,7 +3,7 @@
 <br />
 
 <span class="add_button">
-  <%= link_to t('links.add'), new_user_path %>
+  <%= link_to t('links.add'), new_admin_user_path %>
 </span>
 
 <br />
@@ -23,7 +23,7 @@
 	  </div>		
 
 	  <div class="icons">
-    	<%= link_to raw('<i class="icon-edit icon-large"></i>'), edit_user_path(user) %>
+    	<%= link_to raw('<i class="icon-edit icon-large"></i>'), edit_admin_user_path(user) %>
   	  <%= link_to raw('<i class="icon-remove icon-large"></i>'), user, method: :delete, data: { :confirm => t('dialogs.confirm') } %>
 		</div>
 	</article>

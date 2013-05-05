@@ -1,46 +1,48 @@
 pt-BR:
   layouts:
-    application:
-      title: Caio Duarte - Editor de Conteúdo
-      logo_title: Clique para voltar à página principal
-  home:
-    index:
-      title: Bem vindo ao editor de conteúdos do meu site!
-      text: Se você foi convidado a acessar meu editor, use o menu acima para conhecer as funcionalidades e ver como esse editor funciona.
-      thanks: Obrigado pela visita :)
-  users:
-    index:
-      title: Usuários
-    new:
-      title: Novo Usuário
-    edit:
-      title: Editar Usuário
-  languages:
-    index:
-      title: Idiomas
-    new:
-      title: Novo Idioma
-    edit:
-      title: Editar Idioma
-  bios:
-    edit_multiple:
-      title: Editar Bio
-  jobs:
-    index:
-      title: Trabalhos
-      no_image: Sem Imagem
-    new: 
-      title: Novo Trabalho
-    edit:
-      title: Editar Trabalho
-    form:
-      thumbs: Imagens
-      thumbs_hint: '*Clique nas imagens para alterá-las'
-      add_image: Adicionar Imagem
-      submit: Enviar
-  user_sessions:
-    new:
-      title: Login
+      admin:
+        title: Caio Duarte - Editor de Conteúdo
+        logo_title: Clique para voltar à página principal
+  admin:
+    home:
+      index:
+        title: Bem vindo ao editor de conteúdos do meu site!
+        text: Se você foi convidado a acessar meu editor, use o menu acima para conhecer as funcionalidades e ver como esse editor funciona.
+        thanks: Obrigado pela visita :)
+    users:
+      index:
+        title: Usuários
+      new:
+        title: Novo Usuário
+      edit:
+        title: Editar Usuário
+    languages:
+      index:
+        title: Idiomas
+      new:
+        title: Novo Idioma
+      edit:
+        title: Editar Idioma
+    bios:
+      edit_multiple:
+        title: Editar Biografia
+        submit: Atualizar Biografia
+    jobs:
+      index:
+        title: Trabalhos
+        no_image: Sem Imagem
+      new: 
+        title: Novo Trabalho
+      edit:
+        title: Editar Trabalho
+      form:
+        thumbs: Imagens
+        thumbs_hint: '*Clique nas imagens para alterá-las'
+        add_image: Adicionar Imagem
+        submit: Enviar
+    user_sessions:
+      new:
+        title: Login
 
   general:
     form_error: Há erros no formulário, por favor verifique.

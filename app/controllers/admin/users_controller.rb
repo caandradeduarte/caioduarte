@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Admin::UsersController < Admin::BaseController
   before_filter :require_authentication, :only => [:create, :update, :destroy]
   
   def index
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     if @user.save
-      redirect_to users_path, :notice => t('flash.notice.user.created')
+      redirect_to admin_users_path, :notice => t('flash.notice.user.created')
     else
       render action: "new"
     end
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update_attributes(params[:user])
-      redirect_to users_path, :notice => t('flash.notice.user.updated')
+      redirect_to admin_users_path, :notice => t('flash.notice.user.updated')
     else
       render action: "edit"
     end
@@ -37,6 +37,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
 
-    redirect_to users_url
+    redirect_to admin_users_url
   end
 end

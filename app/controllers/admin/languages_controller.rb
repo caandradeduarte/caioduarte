@@ -1,4 +1,4 @@
-class LanguagesController < ApplicationController
+class Admin::LanguagesController < Admin::BaseController
   before_filter :require_authentication, :only => [:create, :update, :destroy]
 
   def index
@@ -18,7 +18,7 @@ class LanguagesController < ApplicationController
     @language.bio= Bio.new
 
     if @language.save
-      redirect_to languages_path, :notice => t('flash.notice.language.created')
+      redirect_to admin_languages_path, :notice => t('flash.notice.language.created')
     else
       render action: "new"
     end
@@ -28,7 +28,7 @@ class LanguagesController < ApplicationController
     @language = Language.find(params[:id])
 
     if @language.update_attributes(params[:language])
-      redirect_to languages_path, :notice => t('flash.notice.language.updated')
+      redirect_to admin_languages_path, :notice => t('flash.notice.language.updated')
     else
       render action: "edit"
     end
@@ -38,9 +38,9 @@ class LanguagesController < ApplicationController
     @language = Language.find(params[:id])
     
     if @language.destroy
-      redirect_to languages_url
+      redirect_to admin_languages_url
     else
-      redirect_to languages_url, :alert => "#{@language.errors[:base][0].to_s}"
+      redirect_to admin_languages_url, :alert => "#{@language.errors[:base][0].to_s}"
     end
   end
 end
