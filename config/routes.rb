@@ -1,8 +1,9 @@
 Caioduarte::Application.routes.draw do
   LOCALES = /en|pt\-BR/
 
+  match '/:locale' => 'home#index', :locale => LOCALES
+
   scope "(:locale)", :locale => LOCALES do
-    match '/:locale' => 'home#index', :locale => LOCALES
     root :to => "home#index"
   end
 
@@ -24,7 +25,6 @@ Caioduarte::Application.routes.draw do
       resource :user_sessions, :only => [:create, :new, :destroy]
     end
 
-    match '/:locale' => 'home#index', :locale => LOCALES
     root :to => "home#index"
   end
 end
