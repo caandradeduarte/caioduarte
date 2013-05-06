@@ -8,4 +8,15 @@ class Contact
 	attr_accessor :name, :email, :subject, :message
 
 	validates_presence_of :name, :email, :subject, :message
+	validates_format_of :email, :with => /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/
+
+	def initialize(attributes = {})
+    attributes.each do |name, value|
+      send("#{name}=", value)
+    end
+  end
+
+	def persisted?
+		false
+	end
 end

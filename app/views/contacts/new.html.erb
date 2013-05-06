@@ -1,4 +1,30 @@
 <div id="contact-form">
+	<p>
+		<%= link_to 'ca.andrade.duarte@gmail.com', 'mailto:ca.andrade.duarte@gmail.com' %>
+		<br />
+		+61 0466 883 284 (AUS)
+	<p>
+	<%= form_for @contact do |f| %>
+		<div>
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+		</div>
+		<div>
+			<%= f.label :email %>
+			<%= f.text_field :email %>
+		</div>
+		<div>
+			<%= f.label :subject %>
+			<%= f.text_field :subject %>
+		</div>
+		<div>
+			<%= f.label :message %>
+			<%= f.text_area :message %>
+		</div>
+		<div>
+			<%= f.submit %>
+		</div>
+	<% end %>
 </div>
 <div id="letters">
 </div>

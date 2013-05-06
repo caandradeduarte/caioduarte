@@ -86,7 +86,9 @@ en:
   helpers:
     submit:
       user_session:
-        create: 'Login'
+        create: Login
+      contact:
+        create: Send
   activemodel:
     errors:
       models:
@@ -94,6 +96,18 @@ en:
           attributes:
             base:
               invalid_login: Wrong user or password!
+    models:
+      user_session: Login
+      contact: Contact
+    attributes:
+      user_session:
+        email: E-mail
+        password: Password
+      contact:
+        name: Name
+        email: E-mail
+        subject: Subject
+        message: Message
 
   activerecord:
     models:
@@ -122,6 +136,3 @@ en:
       job_description:
         description: Description
         title: Title
-      user_session:
-        email: E-mail
-        password: Password

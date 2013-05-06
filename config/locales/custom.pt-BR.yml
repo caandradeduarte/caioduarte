@@ -86,7 +86,9 @@ pt-BR:
   helpers:
     submit:
       user_session:
-        create: 'Entrar'
+        create: Entrar
+      contact:
+        create: Enviar
   activemodel:
     errors:
       models:
@@ -94,6 +96,18 @@ pt-BR:
           attributes:
             base:
               invalid_login: Usuário ou senha inválidos!
+    models:
+      user_session: Login
+      contact: Contato
+    attributes:
+      user_session:
+        email: E-mail
+        password: Senha
+      contact:
+        name: Nome
+        email: E-mail
+        subject: Assunto
+        message: Mensagem
 
   activerecord:
     models:
@@ -122,6 +136,3 @@ pt-BR:
       job_description:
         description: Descrição
         title: Título
-      user_session:
-        email: E-mail
-        password: Senha
