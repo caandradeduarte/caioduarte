@@ -21,13 +21,13 @@
 						<div class="left-line"></div>
 					</li>
 					<li>
-						<%= link_to 'jobs', '#' %>
+						<%= link_to 'jobs', jobs_path, :class => ('selected' if _routes_context.class.name == 'JobsController') %>
 					</li>
 					<li>
 						<div class="right-line"></div>
 					</li>
 					<li>
-						<%= link_to 'contact', '#' %>
+						<%= link_to 'contact', new_contact_path, :class => ('selected' if _routes_context.class.name == 'ContactsController') %>
 					</li>
 				</ul>
 			</nav>

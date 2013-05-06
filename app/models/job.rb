@@ -2,6 +2,8 @@ class Job < ActiveRecord::Base
 	has_many :job_descriptions, :dependent => :destroy, :autosave => :true
 	has_many :thumbs, :dependent => :destroy, :autosave => :true
 
+	scope :to_display, where(:isShown => true)
+
 	after_create :verify_existence_of_thumbs
 
 	accepts_nested_attributes_for :job_descriptions

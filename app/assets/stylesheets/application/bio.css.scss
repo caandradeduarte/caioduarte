@@ -1,0 +1,32 @@
+$content-width: 660px;
+$vetorized-face-width: 254px;
+$content-height: 435px;
+
+#vetorized-face {
+	width: $vetorized-face-width;
+	height: $content-height;
+	float: left;
+}
+
+#bio-content {
+	float: left;
+	padding: 40px 30px 30px 60px;
+	width: $content-width - $vetorized-face-width - 90px;
+	height: $content-height - 70px;
+
+	blockquote {
+		width: 100%;
+		font-size: 10px;
+		text-align: left;
+		font-style: italic;
+		font-weight: 400;
+		margin-bottom: 20px;
+	}
+
+	p{
+		margin-top: 10px;
+		text-align: justify;
+		word-spacing: 1px;
+		font-size: 12px;
+	}
+}

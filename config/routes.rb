@@ -4,6 +4,10 @@ Caioduarte::Application.routes.draw do
   scope "(:locale)", :locale => LOCALES do
     resource :bio, :only => :show
 
+    resource :jobs, :only => :show
+
+    resource :contact, :only => [:new, :create], :path_names => {:new => ''}
+
     root :to => "home#index"
   end
 
@@ -13,7 +17,7 @@ Caioduarte::Application.routes.draw do
 
       resources :users, :except => :show
 
-      resource :bios, :except => [:index, :show, :new, :create, :edit, :update, :destroy] do 
+      resource :bios, :except => [:show, :new, :create, :edit, :update, :destroy] do 
         collection do
           get 'edit_multiple'
           put 'update_multiple'
@@ -22,7 +26,7 @@ Caioduarte::Application.routes.draw do
 
       resources :languages, :except => :show
 
-      resource :user_sessions, :only => [:create, :new, :destroy]
+      resource :user_sessions, :only => [:create, :new, :destroy], :path => 'login', :path_names => {:new => ''}
 
       root :to => "home#index"
     end

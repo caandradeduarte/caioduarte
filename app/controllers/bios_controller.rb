@@ -1,5 +1,6 @@
 class BiosController < ApplicationController
 	def show
-		@bio = Bio.first
+		locale = params[:locale] || I18n.default_locale
+		@bio = Bio.by_locale(locale).first
 	end
 end
