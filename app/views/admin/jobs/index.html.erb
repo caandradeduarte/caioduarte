@@ -45,7 +45,7 @@
 
     <div class="icons">
       <%= link_to raw('<i class="icon-edit icon-large"></i>'), edit_admin_job_path(job) %>
-      <%= link_to raw('<i class="icon-remove icon-large"></i>'), job, method: :delete, data: { :confirm => t('dialogs.confirm') } %>
+      <%= link_to raw('<i class="icon-remove icon-large"></i>'), [:admin, job], method: :delete, data: { :confirm => t('dialogs.confirm') } %>
     </div>
   </article>
 <% end %>

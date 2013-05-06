@@ -10,19 +10,25 @@
 	<header>
 		<div id="header-wrap">
 			<h1>
-				<%= link_to image_tag('/assets/logo.svg', :height => '90'), root_path %>
+				<%= link_to image_tag('/assets/logo.svg', :height => '90', :class => ('home_page' if _routes_context.class.name == 'HomeController')), root_path %>
 			</h1>
-			<nav id="menu">
+			<nav id="menu" class="<%= 'home_page' if _routes_context.class.name == 'HomeController' %>">
 				<ul>
-					<li>bio</li>
+					<li>
+						<%= link_to 'bio', bio_path, :class => ('selected' if _routes_context.class.name == 'BiosController') %>
+					</li>
 					<li>
 						<div class="left-line"></div>
 					</li>
-					<li>jobs</li>
+					<li>
+						<%= link_to 'jobs', '#' %>
+					</li>
 					<li>
 						<div class="right-line"></div>
 					</li>
-					<li>contact</li>
+					<li>
+						<%= link_to 'contact', '#' %>
+					</li>
 				</ul>
 			</nav>
 			<nav id="social-media">
@@ -36,7 +42,7 @@
 			</nav>
 		</div>
 	</header>
-	<section id="content">
+	<section id="content" class="<%= 'home_page' if _routes_context.class.name == 'HomeController' %>">
 		<%= yield %>
 	</section>
 	<footer>

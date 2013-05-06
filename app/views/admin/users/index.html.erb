@@ -24,7 +24,7 @@
 
 	  <div class="icons">
     	<%= link_to raw('<i class="icon-edit icon-large"></i>'), edit_admin_user_path(user) %>
-  	  <%= link_to raw('<i class="icon-remove icon-large"></i>'), user, method: :delete, data: { :confirm => t('dialogs.confirm') } %>
+  	  <%= link_to raw('<i class="icon-remove icon-large"></i>'), [:admin, user], method: :delete, data: { :confirm => t('dialogs.confirm') } %>
 		</div>
 	</article>
 <% end %>
