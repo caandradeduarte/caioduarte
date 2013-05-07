@@ -4,10 +4,14 @@ class ContactsController < ApplicationController
 	end
 
 	def create
-
+		@contact = Contact.new(params[:contact])
+		if @contact.send_email
+			redirect_to thanks_contact_path
+		else
+			render :action => 'new'
+		end
 	end
 
-	def destroy
-		
+	def thanks
 	end
 end

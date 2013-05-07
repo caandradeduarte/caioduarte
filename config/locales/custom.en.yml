@@ -5,6 +5,10 @@ en:
       logo_title: Click to go back home page
     application:
         title: Caio Duarte - Portfolio
+  contacts:
+      thanks:
+        subtitle: Thank you!
+        thanks_message: Your message was delivered successfully!
   admin:
     home:
       index:
@@ -78,6 +82,9 @@ en:
     jobs: Jobs
     login: Login
     logout: Logout
+
+  contact_mailer:
+    contact_from_site: Contact from site
 
   links:
     add: + Add

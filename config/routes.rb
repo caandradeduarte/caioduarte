@@ -6,7 +6,9 @@ Caioduarte::Application.routes.draw do
 
     resource :jobs, :only => :show
 
-    resource :contacts, :only => [:new, :create], :path => 'contact', :path_names => {:new => ''}
+    resource :contacts, :only => [:new, :create], :path => 'contact', :path_names => {:new => ''} do
+        get 'thanks'
+    end
 
     root :to => "home#index"
   end

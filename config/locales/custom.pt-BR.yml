@@ -5,6 +5,10 @@ pt-BR:
         logo_title: Clique para voltar à página principal
       application:
         title: Caio Duarte - Portfólio
+  contacts:
+      thanks:
+        subtitle: Obrigado!
+        thanks_message: Sua mensagem foi enviada com sucesso!
   admin:
     home:
       index:
@@ -78,6 +82,9 @@ pt-BR:
     jobs: Trabalhos
     login: Login
     logout: Logout
+
+  contact_mailer:
+    contact_from_site: Contato do Site
 
   links:
     add: + Adicionar
