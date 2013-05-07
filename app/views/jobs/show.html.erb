@@ -1,4 +1,16 @@
 <div id="job-description">
+	<%= render 'job_description', :job_description => description_by_locale(@job) %>
 </div>
 <div id="thumbs">
+	<ul>
+		<% @job.thumbs.each_with_index do |thumb, index| %>
+			<li>
+				<div class="hexagon thumb<%= index %>">
+					<div class="hexagon-in">
+						<%= image_tag thumb.picture.thumb %>
+					</div>
+				</div>
+			</li>
+		<% end %>
+	</ul>
 </div>

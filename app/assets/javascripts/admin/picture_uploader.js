@@ -6,11 +6,11 @@ $(document).ready(function() {
 		$('#thumb0 input').click();
 	}).show();
 
-	$('#thumb1 div, thumb1 img').click(function(){
+	$('#thumb1 div, #thumb1 img').click(function(){
 		$('#thumb1 input').click();
 	}).show();
 
-	$('#thumb2 div, thumb2 img').click(function(){
+	$('#thumb2 div, #thumb2 img').click(function(){
 		$('#thumb2 input').click();
 	}).show();
 
@@ -19,11 +19,11 @@ $(document).ready(function() {
 	});
 
 	$('#thumb1 input').change(function(){
-		readURL(this, '#thumb1 div, thumb1 img');
+		readURL(this, '#thumb1 div, #thumb1 img');
 	});
 
 	$('#thumb2 input').change(function(){
-		readURL(this, '#thumb2 div, thumb2 img');
+		readURL(this, '#thumb2 div, #thumb2 img');
 	});
 });
 

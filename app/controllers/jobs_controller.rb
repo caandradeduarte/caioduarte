@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
 	def show
-		jobs = Job.to_display
+		@job = Job.to_display.first
 	end
 end

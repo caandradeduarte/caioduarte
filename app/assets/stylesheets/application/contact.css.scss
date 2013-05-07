@@ -15,6 +15,11 @@ $content-height: 435px;
 
 	padding: 40px 60px 0 40px;
 
+	h2 {
+		font-size: 36px;
+		font-weight: normal;
+	}
+	
 	p {
 		margin-top: 10px;
 		text-align: justify;
@@ -28,11 +33,6 @@ $content-height: 435px;
 			font-weight: lighter;
 			color: #FFFFFF;
 		}
-	}
-
-	h2 {
-		font-size: 36px;
-		font-weight: normal;
 	}
 
 	form {
