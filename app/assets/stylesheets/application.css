@@ -2,6 +2,7 @@
  *= require_self
  *= require_tree ./application
  *= require 'helvetica-condensed-light'
+ *= require 'font-awesome'
  */
 * {
 	margin: 0;

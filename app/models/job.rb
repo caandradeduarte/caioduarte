@@ -3,6 +3,7 @@ class Job < ActiveRecord::Base
 	has_many :thumbs, :dependent => :destroy, :autosave => :true
 
 	scope :to_display, where(:isShown => true)
+	paginates_per 1
 
 	after_create :verify_existence_of_thumbs
 

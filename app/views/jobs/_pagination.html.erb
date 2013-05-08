@@ -1,0 +1,11 @@
+<div id="pagination">
+	<nav>
+		<ul>
+			<% jobs_count.times do |index| %>
+				<li>
+					<%= link_to raw("<i class=\"#{pagination_class index}\"></i>"), :page => (index+1) %>
+				</li>
+			<% end %>
+		</ul>
+	</nav>
+</div>

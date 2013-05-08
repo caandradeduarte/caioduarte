@@ -1,12 +1,40 @@
 $content-width: 660px;
 $content-height: 435px;
 
+#pagination {
+	clear: both;
+	display: block;
+	width: $content-width;
+	height: 40px;
+
+	ul{
+		text-align: center;
+
+		li{
+			display: inline;
+
+			a{
+				color: white;
+				text-decoration: none;
+
+				i {
+					font-size: 10px !important;
+
+					&.current-job {
+						color: black;
+					}
+				}
+			}
+		}
+	}
+}
+
 #job-description{
 	float: left;
 	width: $content-width/2 - 70px;
 	height: $content-height - 100px;
 
-	padding: 60px 20px 40px 40px;
+	padding: 40px 20px 20px 40px;
 
 	h2 {
 		font-size: 24px;
@@ -25,7 +53,7 @@ $content-height: 435px;
 #thumbs {
 	float: left;
 	width: $content-width/2;
-	height: $content-height;
+	height: $content-height - 40px;
 
 	position: relative;
 

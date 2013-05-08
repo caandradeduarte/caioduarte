@@ -10,7 +10,7 @@
 	<header>
 		<div id="header-wrap">
 			<h1>
-				<%= link_to image_tag('/assets/logo.svg', :height => '90', :class => ('home_page' if _routes_context.class.name == 'HomeController')), root_path %>
+				<%= link_to image_tag('/assets/logo.svg', :height => '90'), root_path %>
 			</h1>
 			<nav id="menu" class="<%= 'home_page' if _routes_context.class.name == 'HomeController' %>">
 				<ul>
@@ -27,7 +27,7 @@
 						<div class="right-line"></div>
 					</li>
 					<li>
-						<%= link_to 'contact', new_contact_path, :class => ('selected' if _routes_context.class.name == 'ContactsController') %>
+						<%= link_to 'contact', new_contacts_path, :class => ('selected' if _routes_context.class.name == 'ContactsController') %>
 					</li>
 				</ul>
 			</nav>
