@@ -2,7 +2,7 @@ class Admin::JobsController < Admin::BaseController
   before_filter :require_authentication, :only => [:create, :update, :destroy]
   
   def index
-    @jobs = Job.all
+    @jobs = Kaminari.paginate_array(Job.all).page(params[:page]).per(3)
   end
 
   def new

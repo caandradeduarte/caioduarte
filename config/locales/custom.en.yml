@@ -49,6 +49,13 @@ en:
     user_sessions:
       new:
         title: Login
+  views:
+    pagination:
+      first: "&laquo; Firts"
+      last: "Last &raquo;"
+      previous: "&lsaquo; Previous"
+      next: "Next &rsaquo;"
+      truncate: "..."
 
   general:
     form_error: There are errors, please check them.

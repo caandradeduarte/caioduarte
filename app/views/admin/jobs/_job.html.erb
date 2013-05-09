@@ -1,0 +1,38 @@
+<article class="item jobs">
+  <div>
+    <%= label_tag job.job_descriptions[0], t('activerecord.attributes.job_description.title') %>
+    <%= job.job_descriptions[0].title %>
+  </div>
+  <div>
+    <%= label_tag t('activerecord.attributes.job.isShown') %>
+    <%= job.isShown ? raw('<i class="icon-ok green"></i>') : raw('<i class="icon-remove red"></i>') %>
+  </div>
+  <br/>
+  <br/>
+  <div>
+    <% unless job.thumbs[0].picture.blank? %>
+      <%= image_tag job.thumbs[0].picture.thumb %>
+    <% else %>
+      <div class="no_image"><span><%= t('.no_image') %></span></div>
+    <% end %>
+  </div>
+  <div>
+    <% unless job.thumbs[1].picture.blank? %>
+      <%= image_tag job.thumbs[1].picture.thumb %>
+    <% else %>
+      <div class="no_image"><span><%= t('.no_image') %></span></div>
+    <% end %>
+  </div>
+  <div>
+    <% unless job.thumbs[2].picture.blank? %>
+      <%= image_tag job.thumbs[2].picture.thumb %>
+    <% else %>
+      <div class="no_image"><span><%= t('.no_image') %></span></div>
+    <% end %>
+  </div>
+
+  <div class="icons">
+    <%= link_to raw('<i class="icon-edit icon-large"></i>'), edit_admin_job_path(job) %>
+    <%= link_to raw('<i class="icon-remove icon-large"></i>'), [:admin, job], method: :delete, data: { :confirm => t('dialogs.confirm') } %>
+  </div>
+</article>
