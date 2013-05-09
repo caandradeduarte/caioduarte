@@ -6,9 +6,7 @@ Caioduarte::Application.routes.draw do
 
     resource :jobs, :only => :show
 
-    resource :contacts, :only => [:new, :create], :path => 'contact', :path_names => {:new => ''} do
-        get 'thanks'
-    end
+    resource :contacts, :only => [:new, :create, :show], :path => 'contact'
 
     root :to => "home#index"
   end
@@ -19,7 +17,7 @@ Caioduarte::Application.routes.draw do
 
       resources :users, :except => :show
 
-      resource :bios, :except => [:show, :new, :create, :edit, :update, :destroy] do 
+      resource :bios, :only => [] do 
         collection do
           get 'edit_multiple'
           put 'update_multiple'

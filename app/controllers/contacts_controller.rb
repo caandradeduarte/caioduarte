@@ -6,12 +6,12 @@ class ContactsController < ApplicationController
 	def create
 		@contact = Contact.new(params[:contact])
 		if @contact.send_email
-			redirect_to thanks_contact_path
+			redirect_to :action => 'show'
 		else
 			render :action => 'new'
 		end
 	end
 
-	def thanks
+	def show
 	end
 end

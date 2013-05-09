@@ -6,7 +6,7 @@ pt-BR:
       application:
         title: Caio Duarte - Portfólio
   contacts:
-      thanks:
+      show:
         subtitle: Obrigado!
         thanks_message: Sua mensagem foi enviada com sucesso!
   admin:

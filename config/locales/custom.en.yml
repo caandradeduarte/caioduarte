@@ -6,7 +6,7 @@ en:
     application:
         title: Caio Duarte - Portfolio
   contacts:
-      thanks:
+      show:
         subtitle: Thank you!
         thanks_message: Your message was delivered successfully!
   admin:

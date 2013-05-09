@@ -17,7 +17,7 @@ class Language < ActiveRecord::Base
   protected
 
   def add_job_descriptions
-  	Job.all.each do |job|
+  	Job.find_each do |job|
   		job_description = JobDescription.new
   		job_description.job= job
   		self.job_descriptions.push job_description
@@ -25,7 +25,7 @@ class Language < ActiveRecord::Base
   end
 
   def confirm_presence_of_other_language
-  	if Language.all.count == 1
+  	if Language.count == 1
   		errors.add(:base, I18n.translate('flash.alert.language.last_one'))
   		return false
   	end
