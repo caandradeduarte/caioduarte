@@ -74,7 +74,7 @@
 	padding:0;
 	width:150px;
 	height:29px;
-	background:url(/assets/lightbox/loading.gif) center center no-repeat;
+	background:url('/assets/lightbox/loading.gif') center center no-repeat;
 	text-indent:-9999px;
 }
 #vlb1hoverNav{
@@ -103,10 +103,10 @@
 #vlb1prevLinkImg { left: -48px; }
 #vlb1nextLinkImg { right: -48px; }
 #vlb1prevLinkImg:hover, #vlb1prevLinkImg.hover, #vlb1prevLinkImg:visited:hover { 
-	background:url(/assets/lightbox/prev.png) 5% center no-repeat; 
+	background:url('/assets/lightbox/prev.png') 5% center no-repeat; 
 }
 #vlb1nextLinkImg:hover, #vlb1nextLinkImg.hover, #vlb1nextLinkImg:visited:hover { 
-	background:url(/assets/lightbox/next.png) 97% center no-repeat; 
+	background:url('/assets/lightbox/next.png') 97% center no-repeat; 
 }
 
 #vlb1imageDataContainer{
@@ -138,7 +138,7 @@
 #vlb1prevLinkDetails, #vlb1nextLinkDetails, #vlb1slideShowControl{display:none;}
 
 #vlb1slideShowControl.started{
-	background-image:url($rel#/assets/lightbox/conposit.png$);
+	background-image:url('/assets/lightbox/conposit.png');
 	background-position:0 center;
 }
 
@@ -147,7 +147,7 @@
 	width:42px; 
 	height:49px; 
 	float:left;
-	background-image:url($rel#/assets/lightbox/conposit.png$);
+	background-image:url('/assets/lightbox/conposit.png');
 	background-position:-42px center;
 	background-repeat:no-repeat;
 	}
@@ -169,7 +169,7 @@
 	text-decoration:none;
 	width:80px;
 	height:80px;
-	background:url(/assets/lightbox/close.png) no-repeat;	
+	background:url('/assets/lightbox/close.png/') no-repeat;	
 	_background-image:none;
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/lightbox/close.png', sizingMethod='scale');
 }
@@ -213,42 +213,42 @@
 }
 .vlb{display:none;}
 #vlb1outerImageContainer td.tl{
-	background:url(/assets/lightbox/back_corvers.png) 0 0;
+	background:url('/assets/lightbox/back_corvers.png') 0 0;
 	_background-image:none;
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/lightbox/back_lt.png', sizingMethod='scale');
 }
 #vlb1outerImageContainer td.tc{
-	background:url(/assets/lightbox/back_tb.png) 50% 0;
+	background:url('/assets/lightbox/back_tb.png') 50% 0;
 	_background:none;
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/lightbox/back_ct.png', sizingMethod='scale');
 }
 #vlb1outerImageContainer td.tr{
-	background:url(/assets/lightbox/back_corvers.png) 100% 0;
+	background:url('/assets/lightbox/back_corvers.png') 100% 0;
 	_background-image:none;
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/lightbox/back_rt.png', sizingMethod='scale');
 }
 #vlb1outerImageContainer td.ml{
-	background:url(/assets/lightbox/back_lr.png) 0 50%;
+	background:url('/assets/lightbox/back_lr.png') 0 50%;
 	_background-image:none;
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/lightbox/back_lc.png', sizingMethod='scale');
 }
 #vlb1outerImageContainer td.mr{
-	background:url(/assets/lightbox/back_lr.png) 100% 50%;
+	background:url('/assets/lightbox/back_lr.png') 100% 50%;
 	_background-image:none;
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/lightbox/back_rc.png', sizingMethod='scale');
 }
 #vlb1outerImageContainer td.bl{
-	background:url(/assets/lightbox/back_corvers.png) 0 100%;
+	background:url('/assets/lightbox/back_corvers.png') 0 100%;
 	_background-image:none;
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/lightbox/back_lb.png', sizingMethod='scale');
 }
 #vlb1outerImageContainer td.bc{
-	background:url(/assets/lightbox/back_tb.png) 50% 100%;
+	background:url('/assets/lightbox/back_tb.png') 50% 100%;
 	_background-image:none;
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/lightbox/back_cb.png', sizingMethod='scale');
 }
 #vlb1outerImageContainer td.br{
-	background:url(/assets/lightbox/back_corvers.png) 100% 100%;
+	background:url('/assets/lightbox/back_corvers.png') 100% 100%;
 	_background-image:none;
 	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/lightbox/back_rb.png', sizingMethod='scale');
 }
