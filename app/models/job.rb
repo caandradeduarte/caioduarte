@@ -2,6 +2,7 @@ class Job < ActiveRecord::Base
 	has_many :job_descriptions, :dependent => :destroy, :autosave => :true
 	has_many :thumbs, :dependent => :destroy, :autosave => :true
 
+	default_scope order('created_at DESC')
 	scope :to_display, where(:isShown => true)
 	paginates_per 1
 
