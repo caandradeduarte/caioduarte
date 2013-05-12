@@ -62,5 +62,6 @@ module Caioduarte
     config.assets.paths << Rails.root.join("vendor", "assets", "fonts")
 
     config.assets.initialize_on_precompile = false
+    config.assets.precompile += ['admin.js', 'admin.css']
   end
 end
