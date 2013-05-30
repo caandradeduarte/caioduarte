@@ -133,7 +133,6 @@ en:
       job_description: Job Description
     attributes:
       user:
-        isAdmin: Is Admin?
         email: E-mail
         password: Password
         password_confirmation: Password Confirmation
@@ -144,7 +143,7 @@ en:
       bio:
         content: Content
       job:
-        isShown: Show at home?
+        show: Show at home?
       thumb: 
         picture: Picture
       job_description:

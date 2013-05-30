@@ -133,7 +133,6 @@ pt-BR:
       job_description: Descrição do Trabalho
     attributes:
       user:
-        isAdmin: É Administrador?
         email: E-mail
         password: Senha
         password_confirmation: Confirmação de Senha
@@ -144,7 +143,7 @@ pt-BR:
       bio:
         content: Conteúdo
       job:
-        isShown: Exibir na home?
+        show: Exibir na home?
       thumb: 
         picture: Imagem
       job_description:

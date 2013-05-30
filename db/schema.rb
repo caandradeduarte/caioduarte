@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130408083912) do
+ActiveRecord::Schema.define(:version => 20130530060951) do
 
   create_table "bios", :force => true do |t|
     t.text     "content"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20130408083912) do
   add_index "job_descriptions", ["language_id"], :name => "index_job_descriptions_on_language_id"
 
   create_table "jobs", :force => true do |t|
-    t.boolean  "isShown"
+    t.boolean  "show"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -59,7 +59,6 @@ ActiveRecord::Schema.define(:version => 20130408083912) do
 
   create_table "users", :force => true do |t|
     t.string   "password_digest"
-    t.boolean  "isAdmin"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.string   "email"

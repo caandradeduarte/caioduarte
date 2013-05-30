@@ -3,7 +3,7 @@ class Job < ActiveRecord::Base
 	has_many :thumbs, :dependent => :destroy, :autosave => :true
 
 	default_scope order('created_at DESC')
-	scope :to_display, where(:isShown => true)
+	scope :to_display, where(:show => true)
 	paginates_per 1
 
 	after_create :verify_existence_of_thumbs
@@ -11,7 +11,7 @@ class Job < ActiveRecord::Base
 	accepts_nested_attributes_for :job_descriptions
 	accepts_nested_attributes_for :thumbs
 
-  attr_accessible :isShown, :job_descriptions_attributes, :thumbs_attributes
+  attr_accessible :show, :job_descriptions_attributes, :thumbs_attributes
 
   protected
 

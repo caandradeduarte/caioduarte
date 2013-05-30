@@ -4,8 +4,8 @@
     <%= job.job_descriptions[0].title %>
   </div>
   <div>
-    <%= label_tag t('activerecord.attributes.job.isShown') %>
-    <%= job.isShown ? raw('<i class="icon-ok green"></i>') : raw('<i class="icon-remove red"></i>') %>
+    <%= label_tag t('activerecord.attributes.job.show') %>
+    <%= job.show? ? raw('<i class="icon-ok green"></i>') : raw('<i class="icon-remove red"></i>') %>
   </div>
   <br/>
   <br/>

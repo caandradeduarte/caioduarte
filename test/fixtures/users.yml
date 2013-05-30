@@ -3,9 +3,7 @@
 one:
   user: MyString
   password: MyString
-  isAdmin: false
 
 two:
   user: MyString
   password: MyString
-  isAdmin: false
