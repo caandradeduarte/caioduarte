@@ -9,10 +9,8 @@ Caioduarte::Application.routes.draw do
     resource :contacts, :only => [:new, :create, :show], :path => 'contact'
 
     root :to => "home#index"
-  end
 
-  namespace :admin do
-    scope "(:locale)", :locale => LOCALES do
+    namespace :admin do
       resources :jobs, :except => :show
 
       resources :users, :except => :show
