@@ -7,6 +7,11 @@
 
   <article>
     <p>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= error_tag @user, :name %>
+    </p>
+    <p>
       <%= f.label :email %>
       <%= f.text_field :email %>
       <%= error_tag @user, :email %>

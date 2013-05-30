@@ -12,6 +12,10 @@
 <% @users.each do |user| %>
 	<article class="item">
 		<div>
+	  	<%= label_tag t('activerecord.attributes.user.name') %>
+	    <%= user.name %>
+    </div>
+		<div>
 	  	<%= label_tag t('activerecord.attributes.user.email') %>
 	    <%= user.email %>
     </div>

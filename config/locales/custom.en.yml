@@ -133,6 +133,7 @@ en:
       job_description: Job Description
     attributes:
       user:
+        name: Name
         email: E-mail
         password: Password
         password_confirmation: Password Confirmation
